@@ -5,4 +5,4 @@
 
 ## database erd
 
-[erd for database models(belongs in backend)](./assets/wireframes/erd-smaller.png)
+[erd for database models(belongs in backend)](./assets/wireframes/erd-p5.png)
