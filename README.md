@@ -28,6 +28,8 @@
 10. [Project Setup](#project-setup)
 11. [Components](#components)
 12. [Deployment](#deployment)
+    1. [First deployment](#first-deployment)
+    2. [Final deployment](#final-deployment)
 13. [Credits](#credits)
 14. [Acknowledgements](#acknowledgements)
 
@@ -67,9 +69,28 @@
 
 ## Project Setup
 
+1. Create a new repository in **Github** and use the 'gitpod' button at the top to create workspace
+2. Create the React app by running the terminal command:
+```
+npx create-react-app . --template git+https://github.com/Code-Institute-Org/cra-template-moments.git --use-npm
+```
+- enter y to confirm
+
+3. Check the app is working by using terminal command:
+```
+npm start
+```
+4. the browser should be showing you the React logo
+5. In **App.js** remove the logo import, remove the custom React header element, and replace with a 'H1' element containing a line of text such as 'hello world'.
+6. Check this 'H1' is being shown in your browser preview.
+7. Do a terminal command to add, commit and push the code to Github
+
+
 ## Components
 
 ## Deployment
+### First deployment
+### Final deployment
 
 ## Credits
 
