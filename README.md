@@ -22,7 +22,7 @@
 8. [Bugs](#bugs)
     1. [Fixed](#fixed)
     2. [Unfixed](#unfixed)
-9. [Technologies used]
+9. [Technologies used](#technologies-used)
     1. [Languages](#languages)
     2. [Frameworks, libraries, and programmes](#frameworks-libraries-and-programmes)
 10. [Project Setup](#project-setup)
@@ -31,5 +31,46 @@
 13. [Credits](#credits)
 14. [Acknowledgements](#acknowledgements)
 
-## Wireframes
+## UX
+### Site Purpose
+### Site Goal
+### User Stories
+
+## Design
+
+### Wireframes
 [wireframes for project](./assets/wireframes/appy-families-wireframes.pdf)
+### Colour Scheme
+### Typography
+
+## Front End Developer Role
+
+## React and React Bootstrap
+
+## Features
+
+## Future features
+
+## Testing
+### Manual
+### Validation
+### Lighthouse
+### User Stories
+
+## Bugs
+### Fixed
+### Unfixed
+
+## Technologies used
+### Languages
+### Frameworks, libraries, and programmes
+
+## Project Setup
+
+## Components
+
+## Deployment
+
+## Credits
+
+## Acknowledgements
