@@ -90,6 +90,21 @@ npm start
 
 ## Deployment
 ### First deployment
+
+1. In **Heroku** create a new app, give it a name and choose location.
+
+2. In the **deploy** tab, go to 'deployment method', choose 'Github'
+
+3. Search for the repository in Github that you want to connect and click on the connect button
+
+4. In the 'manual deploy' section click on 'deploy branch'
+
+5. The build log will run, when complete you will see a message saying 'build succeeded'
+
+6. An 'Open App' button will appear, click this to take you to your deployed app.
+
+7. You can enable automatic deploys in the 'deployment section' so each time you push your code to 'Github' your deployed app will be updated.
+
 ### Final deployment
 
 ## Credits
