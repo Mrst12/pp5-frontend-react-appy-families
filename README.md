@@ -97,6 +97,10 @@ Front end developers play an important role in developing an engaging user facin
     - To build components that collectively form the front end of the application.
 - React-Bootstrap
     - The styling side of the front end application used as it was introduced during the walkthrough project.
+- Coolors
+    - used for making colour pallete
+- Google fonts
+    - used for selecting fonts for project.
 
 ## Project Setup
 
