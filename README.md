@@ -68,7 +68,30 @@ Front end developers play an important role in developing an engaging user facin
 
 ## Technologies used
 ### Languages
+
+- HTML
+- CSS
+- Javascript
+- Python
+- SQL - postgres
 ### Frameworks, libraries, and programmes
+
+- Balsamiq
+    - For the wireframes
+- Git
+    - For version control, committing and pushing to Github
+- Github
+    - For storing the repository, files and images pushed from Gitpod
+- Gitpod
+    - IDE used to code project
+- Heroku
+    - used to deploy the application
+- Django
+    - used to build the backend database, that serves as an API for the front end part of the  project
+- ReactJS
+    - To build components that collectively form the front end of the application.
+- React-Bootstrap
+    - The styling side of the front end application used as it was introduced during the walkthrough project.
 
 ## Project Setup
 
