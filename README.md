@@ -55,10 +55,6 @@
 ## Testing
 - The testing for the front end part of the project can be found [here](./TESTING.md)
 - The testing for the backend part of the project can be found [here](https://github.com/Mrst12/pp5-backend-drf-appy-families/blob/main/TESTING.md)
-### Manual
-### Validation
-### Lighthouse
-### User Stories
 
 ## Bugs
 ### Fixed
