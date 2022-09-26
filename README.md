@@ -50,6 +50,8 @@
 
 ## Front End Developer Role
 
+Front end developers play an important role in developing an engaging user facing web applications, aiming to make sure the user stays on and returns to the site is a major objective. Front end developers work on the user interface and user experience, maintaining responsiveness and accessibility of the application. Having an understanding of how the backend part of an application works is helpful to a front end developer, as it helps to tie the two together in an approriate manner.
+
 ## React and React Bootstrap
 
 ## Features
