@@ -46,6 +46,11 @@
 ### Wireframes
 [wireframes for project](./assets/wireframes/appy-families-wireframes.pdf)
 ### Colour Scheme
+
+- The following colour scheme was chosen at the start of the project, I tried to go for light neutral colours as I aim for both male and females to use the site.
+
+![colour scheme for site](./assets/design/p5-colours.png)
+
 ### Typography
 
 ## Front End Developer Role
