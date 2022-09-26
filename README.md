@@ -37,6 +37,9 @@
 ### Site Purpose
 ### Site Goal
 ### User Stories
+- I have put user stories as issues as part of agile development you can find the link [here](https://github.com/Mrst12/pp5-frontend-react-appy-families/issues)
+
+- I have also linked my user stories to a kanban board to make them easier to work on you can find the link [here](https://github.com/users/Mrst12/projects/8/views/1)
 
 ## Design
 
