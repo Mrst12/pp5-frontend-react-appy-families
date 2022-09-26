@@ -33,6 +33,9 @@
 ### Site Purpose
 - Ever needed to leave a note for a family member and can't find a pen?, notes dont get read by your children!, Got a list as long as your arm of things you need to do?, well this site is for you, leave memos for family members, share your achievements with your family, have a Todo list all in one place, when pen and paper dont cut it anymore head to the app that has it all, maybe your children will interact.
 ### Site Goal
+
+- The goal of the site is to have an interactive family app, that everyone can use, multiple things we use on a day to day basis all in one place. Teenagers spend most of their lives looking at their mobile phones, this app allows the interactivity without the stress.
+
 ### User Stories
 - I have put user stories as issues as part of agile development you can find the link [here](https://github.com/Mrst12/pp5-frontend-react-appy-families/issues)
 
