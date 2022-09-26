@@ -15,10 +15,6 @@
 5. [Features](#features)
 6. [Future features](#future-features)
 7. [Testing](#testing)
-    1. [Manual](#manual)
-    2. [Validation](#validation)
-    3. [Lighthouse](#lighthouse)
-    4. [User Stories](#user-stories)
 8. [Bugs](#bugs)
     1. [Fixed](#fixed)
     2. [Unfixed](#unfixed)
@@ -57,6 +53,8 @@
 ## Future features
 
 ## Testing
+- The testing for the front end part of the project can be found [here](./TESTING.md)
+- The testing for the backend part of the project can be found [here](https://github.com/Mrst12/pp5-backend-drf-appy-families/blob/main/TESTING.md)
 ### Manual
 ### Validation
 ### Lighthouse
