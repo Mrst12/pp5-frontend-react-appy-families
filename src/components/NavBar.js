@@ -1,13 +1,14 @@
 import React from 'react';
 import { Navbar, Container, Nav } from 'react-bootstrap';
+import styles from '../styles/NavBar.module.css';
 
 const NavBar = () => {
     return (
         <div>
             <div fixed="top">
-                <h1>APPY FAMILIES</h1>
+                <h1 className={styles.heading}>APPY FAMILIES</h1>
             </div>
-            <Navbar bg="light" expand="md">
+            <Navbar className={styles.NavBar} expand="md">
                 <Container>
                     {/*<Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>*/}
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
