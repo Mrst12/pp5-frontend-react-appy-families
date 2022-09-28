@@ -15,23 +15,42 @@ const NavBar = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto flex-column text-left">
-                            <NavLink to="/">
-                            <i class="far fa-sticky-note"></i> Memo
+                            <NavLink 
+                                exact
+                                activeClassName={styles.Active}
+                                to="/"
+                            >
+                                <i class="far fa-sticky-note"></i> Memo
                             </NavLink>
-                            <NavLink to="/todo">
-                            <i className="fas fa-list"></i> To Do List
+                            <NavLink
+                                activeClassName={styles.Active}
+                                to="/todo"
+                            >
+                                <i className="fas fa-list"></i> To Do List
                             </NavLink>
-                            <NavLink to="/achievements">
-                            <i className="fas fa-trophy"></i> Achievements
+                            <NavLink
+                                activeClassName={styles.Active}
+                                to="/achievements"
+                            >
+                                <i className="fas fa-trophy"></i> Achievements
                             </NavLink>
-                            <NavLink to="/login">
-                            <i className="fas fa-sign-in-alt"></i> Login
+                            <NavLink
+                                activeClassName={styles.Active}
+                                to="/login"
+                            >
+                                <i className="fas fa-sign-in-alt"></i> Login
                             </NavLink>
-                            <NavLink to="/signup">
-                            <i className="fas fa-user-plus"></i> Signup
+                            <NavLink
+                                activeClassName={styles.Active}
+                                to="/signup"
+                            >
+                                <i className="fas fa-user-plus"></i> Signup
                             </NavLink>
-                            <NavLink to="about">
-                            <i className="fas fa-info-circle"></i> About
+                            <NavLink
+                                activeClassName={styles.Active}
+                                to="about"
+                            >
+                                <i className="fas fa-info-circle"></i> About
                             </NavLink>
                         </Nav>
                     </Navbar.Collapse>
