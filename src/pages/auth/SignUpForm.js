@@ -15,6 +15,13 @@ const SignUpForm = () => {
     });
     const { username, password1, password2 } = signUpData;
 
+    const handleChange = (event) => {
+        setSignUpData({
+            ...signUpData,
+            [event.target.name]: event.target.value
+        });
+    };
+
     return (
         <Row className={styles.Row}>
             <Col className="my-auto py-2 p-md-2" md={6}>
@@ -29,6 +36,7 @@ const SignUpForm = () => {
                                 placeholder="Username"
                                 name="username"
                                 value={username}
+                                onChange={handleChange}
                             />
                         </Form.Group>
 
@@ -39,6 +47,8 @@ const SignUpForm = () => {
                                 placeholder="Password"
                                 name="password1"
                                 value={password1}
+                                onChange={handleChange}
+
                             />
                         </Form.Group>
                         <Form.Group controlId="password2">
@@ -48,6 +58,8 @@ const SignUpForm = () => {
                                 placeholder="Confirm password"
                                 name="password2"
                                 value={password2}
+                                onChange={handleChange}
+
                             />
                         </Form.Group>
                         <Button
