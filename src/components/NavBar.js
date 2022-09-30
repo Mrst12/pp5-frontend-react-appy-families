@@ -2,12 +2,54 @@ import React from 'react';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import styles from '../styles/NavBar.module.css';
 import { NavLink } from 'react-router-dom';
-import { useCurrentUser } from '../contexts/CurrentUserContext';
+import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
+import axios from 'axios';
 
 const NavBar = () => {
     const currentUser = useCurrentUser();
+    const setCurrentUser = useSetCurrentUser();
 
-    const loggedInIcons = <>{currentUser?.username}</>
+    const handleSignOut = async () => {
+        try {
+            await axios.post("dj-rest-auth/logout/");
+            setCurrentUser(null);
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+    const loggedInIcons = (
+        <>
+            <NavLink
+                exact
+                activeClassName={styles.Active}
+                to="/"
+            >
+                <i class="far fa-sticky-note"></i> Memo
+            </NavLink>
+            <NavLink
+                activeClassName={styles.Active}
+                to="/todo"
+            >
+                <i className="fas fa-list"></i> To Do List
+            </NavLink>
+            <NavLink
+                activeClassName={styles.Active}
+                to="/achievements"
+            >
+                <i className="fas fa-trophy"></i> Achievements
+            </NavLink>
+            <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
+                <i className="fas fa-sign-out-alt"></i>Sign out
+            </NavLink>
+            <NavLink
+                className={styles.NavLink}
+                to={`/profiles/${currentUser?.profile_id}`}
+            >
+                {/*<Avatar src={currentUser?.profile_image} text="Profile" height={40} />*/}
+            </NavLink>
+        </>
+    )
     const loggedOutIcons = (
         <>
             <NavLink
@@ -22,6 +64,12 @@ const NavBar = () => {
             >
                 <i className="fas fa-user-plus"></i> Signup
             </NavLink>
+            <NavLink
+                activeClassName={styles.Active}
+                to="about"
+            >
+                <i className="fas fa-info-circle"></i> About
+            </NavLink>
         </>
     );
     return (
@@ -35,32 +83,9 @@ const NavBar = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto flex-column text-left">
-                            <NavLink
-                                exact
-                                activeClassName={styles.Active}
-                                to="/"
-                            >
-                                <i class="far fa-sticky-note"></i> Memo
-                            </NavLink>
-                            <NavLink
-                                activeClassName={styles.Active}
-                                to="/todo"
-                            >
-                                <i className="fas fa-list"></i> To Do List
-                            </NavLink>
-                            <NavLink
-                                activeClassName={styles.Active}
-                                to="/achievements"
-                            >
-                                <i className="fas fa-trophy"></i> Achievements
-                            </NavLink>
 
-                            <NavLink
-                                activeClassName={styles.Active}
-                                to="about"
-                            >
-                                <i className="fas fa-info-circle"></i> About
-                            </NavLink>
+
+
                             {currentUser ? loggedInIcons : loggedOutIcons}
                         </Nav>
                     </Navbar.Collapse>
