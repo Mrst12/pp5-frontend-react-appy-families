@@ -11,6 +11,7 @@ import Upload from "../../assets/upload.png";
 import styles from "../../styles/CreateMemoForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
+import Asset from "../../components/Asset";
 
 function MemoCreateForm() {
 
@@ -48,7 +49,7 @@ function MemoCreateForm() {
                   className="d-flex justify-content-center"
                   htmlFor="image-upload"
                 >
-                  ASSET
+                  <Asset src={Upload} message="Click to upload your image" />
                 </Form.Label>
 
             </Form.Group>
