@@ -11,7 +11,7 @@ const NavBar = () => {
     const currentUser = useCurrentUser();
     const setCurrentUser = useSetCurrentUser();
 
-    const {expanded, setExpanded, ref} = useClickOutsideToggle();
+    const { expanded, setExpanded, ref } = useClickOutsideToggle();
 
     const handleSignOut = async () => {
         try {
@@ -58,30 +58,21 @@ const NavBar = () => {
                 Create a Task
             </NavLink>
             <NavLink
-                exact
-                activeClassName={styles.Active}
                 to="/"
-            >
-                <i class="far fa-sticky-note"></i> Memo
-            </NavLink>
-            <NavLink
-                activeClassName={styles.Active}
-                to="/todo"
-            >
-                <i className="fas fa-list"></i> To Do List
-            </NavLink>
-            <NavLink
-                activeClassName={styles.Active}
-                to="/achievements"
-            >
-                <i className="fas fa-trophy"></i> Achievements
-            </NavLink>
-            <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
-                <i className="fas fa-sign-out-alt"></i>Sign out
-            </NavLink>
-            <NavLink
                 className={styles.NavLink}
+                onClick={handleSignOut}
+                aria-label='sign out'
+                rel='noreferrer'
+            >
+                <i className="fas fa-sign-out-alt"></i>
+                {' '}
+                Sign out
+            </NavLink>
+            <NavLink
                 to={`/profiles/${currentUser?.profile_id}`}
+                className={styles.NavLink}
+                aria-label='user profile'
+                rel='noreferrer'
             >
                 <Avatar src={currentUser?.profile_image} text="Profile" height={35} />
             </NavLink>
@@ -90,22 +81,37 @@ const NavBar = () => {
     const loggedOutIcons = (
         <>
             <NavLink
-                activeClassName={styles.Active}
                 to="/login"
+                className={styles.NavLink}
+                activeClassName={styles.Active}
+                aria-label="login"
+                rel="noreferrer"
             >
-                <i className="fas fa-sign-in-alt"></i> Login
+                <i className="fas fa-sign-in-alt"></i>
+                {''}
+                Login
             </NavLink>
             <NavLink
-                activeClassName={styles.Active}
                 to="/signup"
+                className={styles.NavLink}
+                activeClassName={styles.Active}
+                aria-label="sign up"
+                rel="noreferrer"
             >
-                <i className="fas fa-user-plus"></i> Signup
+                <i className="fas fa-user-plus"></i>
+                {' '}
+                Signup
             </NavLink>
             <NavLink
+                to="/about"
+                className={styles.NavLink}
                 activeClassName={styles.Active}
-                to="about"
+                aria-label="about page"
+                rel="noreferrer"
             >
-                <i className="fas fa-info-circle"></i> About
+                <i className='fas fa-info-circle'></i>
+                {' '}
+                About
             </NavLink>
         </>
     );
@@ -114,9 +120,8 @@ const NavBar = () => {
             <div fixed="top">
                 <h1 className={styles.heading}>APPY FAMILIES</h1>
             </div>
-            <Navbar expanded={expanded} className={styles.NavBar} expand="md">
-                <Container>
-                    {/*<Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>*/}
+            <Container>
+                <Navbar expanded={expanded} expand="md">
                     <Navbar.Toggle
                         ref={ref}
                         onClick={() => setExpanded(!expanded)}
@@ -124,15 +129,49 @@ const NavBar = () => {
                     />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto flex-column text-left">
-
-
+                            <NavLink
+                                exact
+                                to="/"
+                                className={styles.NavLink}
+                                activeClassName={styles.Active}
+                                aria-label='home page memos'
+                                rel='noreferrer'
+                            >
+                                <i class="far fa-sticky-note"></i>
+                                {' '}
+                                Memo
+                            </NavLink>
+                            <NavLink
+                                to="/achievements"
+                                className={styles.NavLink}
+                                activeClassName={styles.Active}
+                                aria-label='achievements page'
+                                rel='noreferrer'
+                            >
+                                <i className="fas fa-trophy"></i>
+                                {' '}
+                                Achievements
+                            </NavLink>
+                            <NavLink
+                                to="/todo"
+                                className={styles.NavLink}
+                                activeClassName={styles.Active}
+                                aria-label='todo page'
+                                rel='noreferrer'
+                            >
+                                <i className="fas fa-list"></i>
+                                {' '}
+                                To Do List
+                            </NavLink>
 
                             {currentUser ? loggedInIcons : loggedOutIcons}
+
                         </Nav>
                     </Navbar.Collapse>
-                </Container>
-            </Navbar>
-        </div>
+                </Navbar>
+            </Container>
+
+        </div >
     );
 };
 
