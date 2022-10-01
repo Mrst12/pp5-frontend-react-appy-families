@@ -25,6 +25,39 @@ const NavBar = () => {
     const loggedInIcons = (
         <>
             <NavLink
+                to='/memo/create'
+                className={styles.NavLink}
+                activeClassName={styles.Active}
+                aria-label='create a memo'
+                rel='noreferrer'
+            >
+                <i class="fas fa-plus-circle"></i>
+                {' '}
+                Create Memo
+            </NavLink>
+            <NavLink
+                to='/achievement/create'
+                className={styles.NavLink}
+                activeClassName={styles.Active}
+                aria-label='create an achievement'
+                rel='noreferrer'
+            >
+                <i class="fas fa-plus-circle"></i>
+                {' '}
+                Create an Achievement
+            </NavLink>
+            <NavLink
+                to='/todo/create'
+                className={styles.NavLink}
+                activeClassName={styles.Active}
+                aria-label='create a todo item'
+                rel='noreferrer'
+            >
+                <i class="fas fa-plus-circle"></i>
+                {' '}
+                Create a Task
+            </NavLink>
+            <NavLink
                 exact
                 activeClassName={styles.Active}
                 to="/"
