@@ -4,6 +4,7 @@ import styles from '../styles/NavBar.module.css';
 import { NavLink } from 'react-router-dom';
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
 import axios from 'axios';
+import Avatar from './Avatar';
 
 const NavBar = () => {
     const currentUser = useCurrentUser();
@@ -46,7 +47,7 @@ const NavBar = () => {
                 className={styles.NavLink}
                 to={`/profiles/${currentUser?.profile_id}`}
             >
-                {/*<Avatar src={currentUser?.profile_image} text="Profile" height={40} />*/}
+                <Avatar src={currentUser?.profile_image} text="Profile" height={35} />
             </NavLink>
         </>
     )
