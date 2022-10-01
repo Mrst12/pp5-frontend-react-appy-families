@@ -44,22 +44,22 @@
 ## Design
 
 ### Wireframes
-[wireframes for project](./assets/wireframes/appy-families-wireframes.pdf)
+[wireframes for project](./documents/wireframes/appy-families-wireframes.pdf)
 ### Colour Scheme
 
 - The following colour scheme was chosen at the start of the project, I tried to go for light neutral colours as I aim for both male and females to use the site.
 
-![colour scheme for site](./assets/design/p5-colours.png)
+![colour scheme for site](./documents/design/p5-colours.png)
 
 ### Typography
 
 - In the planning stages of the project, I chose *bungee spice* for the heading
 
-![Heading font](./assets/design/typography-bungee-spice-reg-400.png)
+![Heading font](./documents/design/typography-bungee-spice-reg-400.png)
 
 - For the remainder of text throughout the site, I googled the best pairing for the heading, which came up with *Monserrat*.
 
-![Text for site](./assets/design/typography-montserrat-light-300.png)
+![Text for site](./documents/design/typography-montserrat-light-300.png)
 
 ## Front End Developer Role
 
