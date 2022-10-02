@@ -17,6 +17,20 @@ function AchievementCreateForm() {
 
   const [errors, setErrors] = useState({});
 
+  const [achievementData, setAchievementData] = useState({
+    title: '',
+    content: '',
+    image: '',
+  });
+  const { title, content, image} = achievementData;
+
+  const handleChange = (event) => {
+    setAchievementData({
+        ...achievementData,
+        [event.target.name]: event.target.value,
+    });
+  };
+
 
   const textFields = (
     <div className="text-center">
@@ -26,6 +40,8 @@ function AchievementCreateForm() {
             type="text"
             name="title"
             aria-label="title"
+            value={title}
+            onChange={handleChange}
         />
       </Form.Group>
       <Form.Group>
@@ -35,6 +51,8 @@ function AchievementCreateForm() {
             rows={6} 
             name="content"
             aria-label="content"
+            value={content}
+            onChange={handleChange}
         />
       </Form.Group>
 
@@ -67,7 +85,7 @@ function AchievementCreateForm() {
                 >
                   <Asset src={Upload} message="Click to upload your image" />
                 </Form.Label>
-
+                <Form.File id="image-upload" accept="image/*" />
             </Form.Group>
             <div className="d-md-none">{textFields}</div>
           </Container>
