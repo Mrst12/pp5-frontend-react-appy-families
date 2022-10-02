@@ -11,6 +11,7 @@ import Upload from "../../assets/upload.png";
 import styles from "../../styles/CreateAchievementForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
+import Asset from "../../components/Asset";
 
 function AchievementCreateForm() {
 
@@ -19,7 +20,23 @@ function AchievementCreateForm() {
 
   const textFields = (
     <div className="text-center">
-      {/* Add your form fields here */}
+      <Form.Group>
+        <Form.Label>Title</Form.Label>
+        <Form.Control
+            type="text"
+            name="title"
+            aria-label="title"
+        />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label>Content</Form.Label>
+        <Form.Control
+            as="textarea"
+            rows={6} 
+            name="content"
+            aria-label="content"
+        />
+      </Form.Group>
 
     
     
@@ -48,7 +65,7 @@ function AchievementCreateForm() {
                   className="d-flex justify-content-center"
                   htmlFor="image-upload"
                 >
-                  ASSET
+                  <Asset src={Upload} message="Click to upload your image" />
                 </Form.Label>
 
             </Form.Group>
