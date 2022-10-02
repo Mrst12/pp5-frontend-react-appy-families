@@ -31,6 +31,15 @@ function AchievementCreateForm() {
     });
   };
 
+  const handleChangeImage = (event) => {
+    if (event.target.files.length) {
+        URL.revokeObjectURL(image);
+        setAchievementData({
+            ...achievementData,
+            image: URL.createObjectURL(event.target.files[0]),
+        });
+    }
+  };
 
   const textFields = (
     <div className="text-center">
@@ -85,7 +94,11 @@ function AchievementCreateForm() {
                 >
                   <Asset src={Upload} message="Click to upload your image" />
                 </Form.Label>
-                <Form.File id="image-upload" accept="image/*" />
+                <Form.File
+                    id="image-upload"
+                    accept="image/*"
+                    onChange={handleChangeImage}
+                />
             </Form.Group>
             <div className="d-md-none">{textFields}</div>
           </Container>
