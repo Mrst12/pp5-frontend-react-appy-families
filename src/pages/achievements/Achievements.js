@@ -4,6 +4,7 @@ import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { Card, Media, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Avatar from '../../components/Avatar';
+import { axiosRes } from '../../api/axiosDefaults';
 
 const Achievements = (props) => {
     const {
@@ -18,10 +19,27 @@ const Achievements = (props) => {
         content,
         image,
         achievementsPage,
+        setAchievement,
     } = props;
 
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner
+
+    const handleLike = async () => {
+        try {
+            const {data} = await axiosRes.post('/like_achievements', {achievements:id});
+            setAchievement((prevAchievement) => ({
+                ...prevAchievement,
+                results: prevAchievement.results.map((achievements) => {
+                    return achievements.id === id
+                    ? {...achievements, likes_count: achievements.likes_count +1, like_id: data.id}
+                    : achievements;
+                }),
+            }));
+        } catch (err) {
+            console.log(err);
+        }
+    };
 
 
     return <Card className={styles.Achievements}>
@@ -52,7 +70,7 @@ const Achievements = (props) => {
                         <i className={`fas fa-heart ${styles.Heart}`} />
                     </span>
                 ) : currentUser ? (
-                    <span onClick={() => { }}>
+                    <span onClick={handleLike}>
                         <i className={`far fa-heart ${styles.HeartOutline}`} />
                     </span>
                 ) : (
