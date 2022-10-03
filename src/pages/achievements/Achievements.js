@@ -41,6 +41,22 @@ const Achievements = (props) => {
         }
     };
 
+    const handleUnlike = async () => {
+        try {
+            await axiosRes.delete(`/like_achievements${like_id}/`);
+            setAchievement((prevAchievement) => ({
+                ...prevAchievement,
+                results: prevAchievement.results.map((achievements) => {
+                    return achievements.id === id
+                    ? { ...achievements, likes_count: achievements.likes_count -1, like_id: null }
+                    : achievements;
+                }),
+            }));
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
 
     return <Card className={styles.Achievements}>
         <Card.Body>
@@ -66,7 +82,7 @@ const Achievements = (props) => {
                         <i className="far fa-heart" />
                     </OverlayTrigger>
                 ) : like_id ? (
-                    <span onClick={() => { }}>
+                    <span onClick={handleUnlike}>
                         <i className={`fas fa-heart ${styles.Heart}`} />
                     </span>
                 ) : currentUser ? (
