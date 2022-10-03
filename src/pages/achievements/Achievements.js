@@ -17,6 +17,7 @@ const Achievements = (props) => {
         title,
         content,
         image,
+        achievementsPage,
     } = props;
 
     const currentUser = useCurrentUser();
@@ -30,7 +31,17 @@ const Achievements = (props) => {
                     <Avatar src={profile_image} height={55} />
                     {owner}
                 </Link>
+                <div className="d-flex align-items-center">
+                    {is_owner && achievementsPage && "..."}
+                </div>
             </Media>
+        </Card.Body>
+        <Link to={`/achievements/${id}`}>
+            <Card.Img src={image} alt={title} />
+        </Link>
+        <Card.Body>
+            {title && <Card.Title className='text-center'>{title}</Card.Title>}
+            {content && <Card.Text>{content}</Card.Text>}
         </Card.Body>
     </Card>
 }
