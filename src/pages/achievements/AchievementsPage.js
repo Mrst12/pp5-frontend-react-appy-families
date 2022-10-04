@@ -1,4 +1,4 @@
-/*single achievement page*/
+//single achievement page
 import React, { useEffect, useState } from "react";
 
 import Col from "react-bootstrap/Col";
