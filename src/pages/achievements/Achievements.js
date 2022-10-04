@@ -27,7 +27,7 @@ const Achievements = (props) => {
 
     const handleLike = async () => {
         try {
-            const {data} = await axiosRes.post('/like_achievements', {achievements:id});
+            const {data} = await axiosRes.post('/like_achievements/', { achievement_post: id });
             setAchievement((prevAchievement) => ({
                 ...prevAchievement,
                 results: prevAchievement.results.map((achievements) => {
@@ -43,7 +43,7 @@ const Achievements = (props) => {
 
     const handleUnlike = async () => {
         try {
-            await axiosRes.delete(`/like_achievements${like_id}/`);
+            await axiosRes.delete(`/like_achievements/${like_id}/`);
             setAchievement((prevAchievement) => ({
                 ...prevAchievement,
                 results: prevAchievement.results.map((achievements) => {
