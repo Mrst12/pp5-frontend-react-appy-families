@@ -12,13 +12,13 @@ const Achievements = (props) => {
         owner,
         profile_id,
         profile_image,
-        comments_count,
-        likes_count,
+        achievements_comments_count,
+        achievements_likes_count,
         like_id,
         title,
         content,
         image,
-        achievementsPage,
+        AchievementsPage,
         setAchievement,
     } = props;
 
@@ -32,7 +32,7 @@ const Achievements = (props) => {
                 ...prevAchievement,
                 results: prevAchievement.results.map((achievements) => {
                     return achievements.id === id
-                    ? {...achievements, achievements_likes_count: achievements.likes_count +1, like_id: data.id}
+                    ? {...achievements, achievements_likes_count: achievements.achievements_likes_count +1, like_id: data.id}
                     : achievements;
                 }),
             }));
@@ -48,7 +48,7 @@ const Achievements = (props) => {
                 ...prevAchievement,
                 results: prevAchievement.results.map((achievements) => {
                     return achievements.id === id
-                    ? { ...achievements, likes_count: achievements.likes_count -1, like_id: null }
+                    ? { ...achievements, achievements_likes_count: achievements.achievements_likes_count -1, like_id: null }
                     : achievements;
                 }),
             }));
@@ -66,7 +66,7 @@ const Achievements = (props) => {
                     {owner}
                 </Link>
                 <div className="d-flex align-items-center">
-                    {is_owner && achievementsPage && "..."}
+                    {is_owner && AchievementsPage && "..."}
                 </div>
             </Media>
         </Card.Body>
@@ -94,11 +94,11 @@ const Achievements = (props) => {
                         <i className="far fa-heart" />
                     </OverlayTrigger>
                 )}
-                {likes_count}
+                {achievements_likes_count}
                 <Link to={`/achievements/${id}`}>
                     <i className='far fa-comments' />
                 </Link>
-                {comments_count}
+                {achievements_comments_count}
             </div>
         </Card.Body>
     </Card>
