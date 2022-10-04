@@ -32,7 +32,7 @@ const Achievements = (props) => {
                 ...prevAchievement,
                 results: prevAchievement.results.map((achievements) => {
                     return achievements.id === id
-                    ? {...achievements, likes_count: achievements.likes_count +1, like_id: data.id}
+                    ? {...achievements, achievements_likes_count: achievements.likes_count +1, like_id: data.id}
                     : achievements;
                 }),
             }));
