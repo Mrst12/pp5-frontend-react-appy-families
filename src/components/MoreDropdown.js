@@ -5,7 +5,7 @@ import styles from '../styles/MoreDropdown.module.css';
 
 const ThreeDots = React.forwardRef(({ onClick }, ref) => (
     <i
-        className='fas fa-ellipsis-v'
+        className="fas fa-ellipsis-v"
         ref={ref}
         onClick={(e) => {
             e.preventDefault();
@@ -16,12 +16,14 @@ const ThreeDots = React.forwardRef(({ onClick }, ref) => (
 
 export const MoreDropdown = () => {
     return (
-        <Dropdown>
-            <Dropdown.Toggle as={ThreeDots} id="dropdown-custom-components">
-                Custom toggle
-            </Dropdown.Toggle>
+        <Dropdown className='ml-auto' drop='left'>
+            <Dropdown.Toggle as={ThreeDots} />
 
-            <Dropdown.Menu>
+
+            <Dropdown.Menu
+                className="text-center"
+                popperConfig={{ strategy: "fixed" }}
+            >
                 <Dropdown.Item eventKey="1">Red</Dropdown.Item>
                 <Dropdown.Item eventKey="2">Blue</Dropdown.Item>
                 <Dropdown.Item eventKey="3" active>
@@ -30,5 +32,5 @@ export const MoreDropdown = () => {
                 <Dropdown.Item eventKey="1">Red-Orange</Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown>
-  );
+    );
 };

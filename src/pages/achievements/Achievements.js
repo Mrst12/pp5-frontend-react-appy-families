@@ -5,6 +5,7 @@ import { Card, Media, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Avatar from '../../components/Avatar';
 import { axiosRes } from '../../api/axiosDefaults';
+import { MoreDropdown } from '../../components/MoreDropdown';
 
 const Achievements = (props) => {
     const {
@@ -18,6 +19,7 @@ const Achievements = (props) => {
         title,
         content,
         image,
+        date_created,
         AchievementsPage,
         setAchievement,
     } = props;
@@ -66,7 +68,8 @@ const Achievements = (props) => {
                     {owner}
                 </Link>
                 <div className="d-flex align-items-center">
-                    {is_owner && AchievementsPage && "..."}
+                    <span>{date_created}</span>
+                    {is_owner && AchievementsPage && <MoreDropdown />}
                 </div>
             </Media>
         </Card.Body>
