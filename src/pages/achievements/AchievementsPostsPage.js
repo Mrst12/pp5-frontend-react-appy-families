@@ -34,7 +34,13 @@ function AchievementsPostsPage(message) {
     };
 
     setHasLoaded(false);
-    fetchAchievementPosts()
+    const timer = setTimeout(() => {
+      fetchAchievementPosts();
+    }, 1000);
+    return () => {
+      clearTimeout(timer);
+    };
+
   }, [query, pathname]);
 
   return (
