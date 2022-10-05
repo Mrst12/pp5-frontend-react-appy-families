@@ -8,6 +8,7 @@ import SignInForm from './pages/auth/SignInForm';
 import MemoCreateForm from './pages/memo/MemoCreateForm';
 import AchievementCreateForm from './pages/achievements/AchievementCreateForm';
 import AchievementsPage from './pages/achievements/AchievementsPage';
+import AllAchievementsPage from './pages/achievements/AllAchievementsPage';
 
 function App() {
   return (
@@ -17,7 +18,9 @@ function App() {
         <Switch>
           <Route exact path="/" render={() => <h1>Memo page</h1>} />
           <Route exact path="/todo" render={() => <h1>To Do List</h1>} />
-          <Route exact path="/achievements" render={() => <h1>Achievements</h1>} />
+          <Route
+            exact path="/achievements"
+            render={() => <AllAchievementsPage message="No results found, please adjust the search keyword" />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/about" render={() => <h1>About</h1>} />
           <Route exact path="/login" render={() => <SignInForm />} />
