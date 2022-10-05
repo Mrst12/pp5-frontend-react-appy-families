@@ -13,6 +13,8 @@ import { axiosReq } from "../../api/axiosDefaults";
 import Achievements from "./Achievements";
 import Asset from "../../components/Asset";
 import NoResults from "../../assets/no-results.png";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { fetchMoreData } from "../../utils/utils";
 
 function AchievementsPostsPage(message) {
 
@@ -65,9 +67,18 @@ function AchievementsPostsPage(message) {
         {hasLoaded ? (
           <>
             {achievementPosts.results.length ? (
-              achievementPosts.results.map((achievement_post) => (
-                <Achievements key={achievement_post.id} {...achievement_post} setAchievement={setAchievementPosts} />
-              ))
+              <InfiniteScroll
+                children={
+                  achievementPosts.results.map((achievement_post) => (
+                    <Achievements key={achievement_post.id} {...achievement_post} setAchievement={setAchievementPosts} />
+                  ))
+                }
+                dataLength={achievementPosts.results.length}
+                loader={<Asset spinner />}
+                hasMore={!!achievementPosts.next}
+                next={() => fetchMoreData(achievementPosts, setAchievementPosts)}
+              />
+
             ) : (
               <Container className={appStyles.Content}>
                 <Asset src={NoResults} message={message} />
