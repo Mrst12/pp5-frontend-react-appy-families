@@ -7,9 +7,9 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 
 import appStyles from "../../App.module.css";
-import styles from "../../styles/AllAchievements.module.css";
+import styles from "../../styles/AchievementsPosts.module.css";
 
-function AllAchievementsPage() {
+function AchievementsPostsPage() {
   
   return (
     <Row className="h-100">
@@ -24,4 +24,4 @@ function AllAchievementsPage() {
   );
 }
 
-export default AllAchievementsPage;
+export default AchievementsPostsPage;
