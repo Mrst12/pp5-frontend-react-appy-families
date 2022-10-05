@@ -20,10 +20,12 @@ function AchievementsPostsPage(message) {
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
 
+  const [query, setQuery] = useState("");
+
   useEffect(() => {
     const fetchAchievementPosts = async () => {
       try {
-        const { data } = await axiosReq.get('/achievements/');
+        const { data } = await axiosReq.get(`/achievements/?search=${query}`);
         setAchievementPosts(data);
         setHasLoaded(true);
       } catch (err) {
@@ -33,7 +35,7 @@ function AchievementsPostsPage(message) {
 
     setHasLoaded(false);
     fetchAchievementPosts()
-  }, [pathname]);
+  }, [query, pathname]);
 
   return (
     <Row className="h-100">
@@ -44,6 +46,8 @@ function AchievementsPostsPage(message) {
           onSubmit={(event) => event.preventDefault()}
         >
           <Form.Control
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
             type="text"
             className="mr-sm-2"
             placeholder="Search achievements"
