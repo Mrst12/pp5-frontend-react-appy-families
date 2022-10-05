@@ -39,6 +39,19 @@ function AchievementsPostsPage(message) {
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <p>Popular profiles mobile</p>
+        <i className={`fas fa-search ${styles.SearchIcon}`} />
+        <Form className={styles.SearchBar}
+          onSubmit={(event) => event.preventDefault()}
+        >
+          <Form.Control
+            type="text"
+            className="mr-sm-2"
+            placeholder="Search achievements"
+            aria-label="search achievements"
+          />
+        </Form>
+
+
         {hasLoaded ? (
           <>
             {achievementPosts.results.length ? (
