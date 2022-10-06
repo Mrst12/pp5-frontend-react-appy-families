@@ -2,7 +2,7 @@ import React from 'react';
 import styles from '../../styles/Achievement.module.css';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { Card, Media, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Avatar from '../../components/Avatar';
 import { axiosRes } from '../../api/axiosDefaults';
 import { MoreDropdown } from '../../components/MoreDropdown';
@@ -25,7 +25,12 @@ const Achievements = (props) => {
     } = props;
 
     const currentUser = useCurrentUser();
-    const is_owner = currentUser?.username === owner
+    const is_owner = currentUser?.username === owner;
+    const history = useHistory();
+
+    const handleEdit = () => {
+        history.push(`/achievements/${id}/edit`)
+    }
 
     const handleLike = async () => {
         try {
@@ -69,7 +74,7 @@ const Achievements = (props) => {
                 </Link>
                 <div className="d-flex align-items-center">
                     <span>{date_created}</span>
-                    {is_owner && setAchievement && <MoreDropdown />}
+                    {is_owner && setAchievement && <MoreDropdown handleEdit={handleEdit} />}
                 </div>
             </Media>
         </Card.Body>
