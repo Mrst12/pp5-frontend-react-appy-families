@@ -30,7 +30,16 @@ const Achievements = (props) => {
 
     const handleEdit = () => {
         history.push(`/achievements/${id}/edit`)
-    }
+    };
+
+    const handleDelete = async () => {
+        try {
+            await axiosRes.delete(`/achievements/${id}/`);
+            history.push('/achievements/');
+        } catch (err) {
+            console.log(err);
+        }
+    };
 
     const handleLike = async () => {
         try {
@@ -74,7 +83,12 @@ const Achievements = (props) => {
                 </Link>
                 <div className="d-flex align-items-center">
                     <span>{date_created}</span>
-                    {is_owner && setAchievement && <MoreDropdown handleEdit={handleEdit} />}
+                    {is_owner && setAchievement && (
+                        <MoreDropdown
+                            handleEdit={handleEdit}
+                            handleDelete={handleDelete}
+                        />
+                    )}
                 </div>
             </Media>
         </Card.Body>
