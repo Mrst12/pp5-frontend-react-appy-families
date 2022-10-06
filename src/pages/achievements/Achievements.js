@@ -20,7 +20,7 @@ const Achievements = (props) => {
         content,
         image,
         date_created,
-        AchievementsPage,
+        // AchievementsPage,
         setAchievement,
     } = props;
 
@@ -69,7 +69,7 @@ const Achievements = (props) => {
                 </Link>
                 <div className="d-flex align-items-center">
                     <span>{date_created}</span>
-                    {is_owner && AchievementsPage && <MoreDropdown />}
+                    {is_owner && setAchievement && <MoreDropdown />}
                 </div>
             </Media>
         </Card.Body>
