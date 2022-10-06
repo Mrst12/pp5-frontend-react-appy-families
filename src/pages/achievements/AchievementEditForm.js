@@ -68,13 +68,16 @@ function AchievementEditForm() {
         event.preventDefault()
         const formData = new FormData();
 
-        formData.append('title', title)
-        formData.append('content', content)
-        formData.append('image', imageInput.current.files[0])
+        formData.append('title', title);
+        formData.append('content', content);
+
+        if (imageInput?.current?.files[0]) {
+            formData.append('image', imageInput.current.files[0]);
+        }
 
         try {
-            const { data } = await axiosReq.post('/achievements/', formData);
-            history.push(`/achievements/${data.id}`);
+            await axiosReq.put(`/achievements/${id}/`, formData);
+            history.push(`/achievements/${id}`);
         } catch (err) {
             console.log(err)
             if (err.response?.status !== 401) {
