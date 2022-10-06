@@ -5,6 +5,9 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 
+import AchievementsCommentCreateForm from "../comments/AchievementsCommentCreateForm";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
+
 import appStyles from "../../App.module.css";
 import { useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
@@ -14,6 +17,10 @@ function AchievementsPage() {
     const { id } = useParams();
     const [achievement, setAchievement] = useState({ results: [] });
 
+    const currentUser = useCurrentUser();
+    const profile_image = currentUser?.profile_image;
+    const [achievementsComments, setAchievementsComments] = useState({ results: [] });
+
     useEffect(() => {
         const handleMount = async () => {
             try {
@@ -21,7 +28,7 @@ function AchievementsPage() {
                     axiosReq.get(`/achievements/${id}`),
                 ])
                 setAchievement({ results: [achievement] })
-                console.log(achievement)
+                console.log(setAchievement)
             } catch (err) {
                 console.log(err)
             }
@@ -37,7 +44,17 @@ function AchievementsPage() {
                 <p>Popular profiles for mobile</p>
                 <Achievements {...achievement.results[0]} setAchievement={setAchievement} AchievementsPage />
                 <Container className={appStyles.Content}>
-                    Comments
+                    {currentUser ? (
+                        <AchievementsCommentCreateForm
+                            profile_id={currentUser.profile_id}
+                            profile_Image={profile_image}
+                            achievement_post={id}
+                            setAchievement={setAchievement}
+                            setAchievementsComments={setAchievementsComments}
+                        />
+                    ) : achievementsComments.results.length ? (
+                        "Comments"
+                    ) : null}
                 </Container>
             </Col>
             <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">

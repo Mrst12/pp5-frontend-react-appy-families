@@ -9,7 +9,7 @@ import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 
 function AchievementsCommentCreateForm(props) {
-  const { post, setPost, setComments, profileImage, profile_id } = props;
+  const { achievement_post, setAchievement, setAchievementsComments, profileImage, profile_id } = props;
   const [content, setContent] = useState("");
 
   const handleChange = (event) => {
@@ -19,19 +19,19 @@ function AchievementsCommentCreateForm(props) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const { data } = await axiosRes.post("/comments/", {
+      const { data } = await axiosRes.post("/comments_achievements/", {
         content,
-        post,
+        achievement_post,
       });
-      setComments((prevComments) => ({
-        ...prevComments,
-        results: [data, ...prevComments.results],
+      setAchievementsComments((prevAchievementsComments) => ({
+        ...prevAchievementsComments,
+        results: [data, ...prevAchievementsComments.results],
       }));
-      setPost((prevPost) => ({
+      setAchievement((prevAchievementsPost) => ({
         results: [
           {
-            ...prevPost.results[0],
-            comments_count: prevPost.results[0].comments_count + 1,
+            ...prevAchievementsPost.results[0],
+            achievements_comments_count: prevAchievementsPost.results[0].achievements_comments_count + 1,
           },
         ],
       }));
