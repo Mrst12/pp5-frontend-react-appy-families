@@ -47,7 +47,7 @@ function AchievementsPage() {
                     {currentUser ? (
                         <AchievementsCommentCreateForm
                             profile_id={currentUser.profile_id}
-                            profile_Image={profile_image}
+                            profileImage={profile_image}
                             achievement_post={id}
                             setAchievement={setAchievement}
                             setAchievementsComments={setAchievementsComments}
