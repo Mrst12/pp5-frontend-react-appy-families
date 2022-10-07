@@ -62,6 +62,8 @@ function AchievementsPage() {
                             <AchievementsComment
                                 key={achievementsComments.id}
                                 {...achievementsComments}
+                                setAchievement={setAchievement}
+                                setAchievementsComments={setAchievementsComments}
                             />
 
                         ))
