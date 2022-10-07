@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Media } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { axiosRes } from '../../api/axiosDefaults';
@@ -6,6 +6,7 @@ import Avatar from '../../components/Avatar';
 import { MoreDropdown } from '../../components/MoreDropdown';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import styles from '../../styles/AchievementsComments.module.css';
+import AchievementsCommentEditForm from './AchievementsCommentEditForm';
 
 const AchievementsComment = (props) => {
     const {
@@ -19,6 +20,8 @@ const AchievementsComment = (props) => {
         setAchievementsComments,
     } = props;
 
+    const [showEditForm, setShowEditForm] = useState(false);
+
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner;
 
@@ -28,39 +31,51 @@ const AchievementsComment = (props) => {
             setAchievement(prevAchievement => ({
                 results: [{
                     ...prevAchievement.results[0],
-                    achievements_comments_count: prevAchievement.results[0].achievements_comments_count -1
+                    achievements_comments_count: prevAchievement.results[0].achievements_comments_count - 1
                 }]
             }))
 
             setAchievementsComments(prevAchievementsComment => ({
                 ...prevAchievementsComment,
-                results: prevAchievementsComment.results.filter((achievementsComments) => achievementsComments.id !==id),
+                results: prevAchievementsComment.results.filter((achievementsComments) => achievementsComments.id !== id),
             }))
         } catch (err) {
-            
+            console.log(err);
+
         }
     }
 
     return (
-        <div>
+        <>
             <hr />
             <Media>
                 <Link to={`/profiles/${profile_id}`}>
                     <Avatar src={profile_image} />
                 </Link>
-                <Media.Body className='align-self-center ml-2'>
+                <Media.Body className="align-self-center ml-2">
                     <span className={styles.Owner}>{owner}</span>
                     <span className={styles.Date}>{created_on}</span>
-                    <p>{content}</p>
+                    {showEditForm ? (
+                        <AchievementsCommentEditForm
+                        id={id}
+                        profile_id={profile_id}
+                        content={content}
+                        profileImage={profile_image}
+                        setAchievementsComments={setAchievementsComments}
+                        setShowEditForm={setShowEditForm}
+                        />
+                    ) : (
+                        <p>{content}</p>
+                    )}
                 </Media.Body>
-                {is_owner && (
+                {is_owner && !showEditForm && (
                     <MoreDropdown
-                        handleEdit={() => {}}
+                        handleEdit={() => setShowEditForm(true)}
                         handleDelete={handleDelete}
                     />
                 )}
             </Media>
-        </div>
+        </>
     );
 };
 
