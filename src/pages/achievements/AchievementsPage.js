@@ -13,6 +13,9 @@ import { useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import Achievements from "./Achievements";
 import AchievementsComment from "../comments/AchievementsComment";
+import InfiniteScroll from "react-infinite-scroll-component";
+import Asset from '../../components/Asset';
+import { fetchMoreData } from '../../utils/utils';
 
 function AchievementsPage() {
     const { id } = useParams();
@@ -58,7 +61,8 @@ function AchievementsPage() {
                         "Comments"
                     ) : null}
                     {achievementsComments.results.length ? (
-                        achievementsComments.results.map(achievementsComments => (
+                        <InfiniteScroll
+                            children={achievementsComments.results.map((achievementsComments) => (
                             <AchievementsComment
                                 key={achievementsComments.id}
                                 {...achievementsComments}
@@ -66,7 +70,12 @@ function AchievementsPage() {
                                 setAchievementsComments={setAchievementsComments}
                             />
 
-                        ))
+                        ))}
+                        dataLength={achievementsComments.results.length}
+                        loader={<Asset spinner />}
+                        hasMore={!!achievementsComments.next}
+                        next={() => fetchMoreData(achievementsComments, setAchievementsComments) }
+                        />
                     ) : currentUser ? (
                         <span>No comments yet, be the first to comment!</span>
                     ) : (
