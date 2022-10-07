@@ -12,6 +12,7 @@ import appStyles from "../../App.module.css";
 import { useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import Achievements from "./Achievements";
+import AchievementsComment from "../comments/AchievementsComment";
 
 function AchievementsPage() {
     const { id } = useParams();
@@ -24,7 +25,7 @@ function AchievementsPage() {
     useEffect(() => {
         const handleMount = async () => {
             try {
-                const [{ data: achievement }, {data: achievementsComments}] = await Promise.all([
+                const [{ data: achievement }, { data: achievementsComments }] = await Promise.all([
                     axiosReq.get(`/achievements/${id}`),
                     axiosReq.get(`/comments_achievements/?achievement_post=${id}`)
                 ])
@@ -58,9 +59,11 @@ function AchievementsPage() {
                     ) : null}
                     {achievementsComments.results.length ? (
                         achievementsComments.results.map(achievementsComments => (
-                            <p key={achievementsComments.id}>
-                                {achievementsComments.owner}: {achievementsComments.content}
-                            </p>
+                            <AchievementsComment
+                                key={achievementsComments.id}
+                                {...achievementsComments}
+                            />
+
                         ))
                     ) : currentUser ? (
                         <span>No comments yet, be the first to comment!</span>
