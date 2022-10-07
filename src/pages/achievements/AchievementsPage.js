@@ -24,11 +24,12 @@ function AchievementsPage() {
     useEffect(() => {
         const handleMount = async () => {
             try {
-                const [{ data: achievement }] = await Promise.all([
+                const [{ data: achievement }, {data: achievementsComments}] = await Promise.all([
                     axiosReq.get(`/achievements/${id}`),
+                    axiosReq.get(`/comments_achievements/?achievement_post=${id}`)
                 ])
-                setAchievement({ results: [achievement] })
-                console.log(setAchievement)
+                setAchievement({ results: [achievement] });
+                setAchievementsComments(achievementsComments);
             } catch (err) {
                 console.log(err)
             }
@@ -55,6 +56,17 @@ function AchievementsPage() {
                     ) : achievementsComments.results.length ? (
                         "Comments"
                     ) : null}
+                    {achievementsComments.results.length ? (
+                        achievementsComments.results.map(achievementsComments => (
+                            <p key={achievementsComments.id}>
+                                {achievementsComments.owner}: {achievementsComments.content}
+                            </p>
+                        ))
+                    ) : currentUser ? (
+                        <span>No comments yet, be the first to comment!</span>
+                    ) : (
+                        <span>No comments yet....</span>
+                    )}
                 </Container>
             </Col>
             <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
