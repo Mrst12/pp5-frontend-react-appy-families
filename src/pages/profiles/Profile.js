@@ -25,6 +25,25 @@ const Profile = (props) => {
             <div className={`mx-2 ${styles.WordBreak}`}>
                 <strong>{owner}</strong>
             </div>
+            <div className={`text-right ${!mobile && 'ml-auto'}`}>
+                {!mobile && currentUser && !is_owner && (
+                    following_id ? (
+                        <Button
+                            className={`${btnStyles.Button} ${btnStyles.BlackOutline}`}
+                            onClick={() => {}}
+                        >
+                            Watching you!
+                        </Button>
+                    ) : (
+                        <Button
+                            className={`{btnStyles.Button} ${btnStyles.Blue}`}
+                            onClick={() => {}}
+                        >
+                            Not watching you!
+                        </Button>
+                    )
+                )}
+            </div>
         </div>
     );
 };
