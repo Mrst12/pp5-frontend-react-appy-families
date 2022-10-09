@@ -58,8 +58,25 @@ function ProfilePage() {
                     />
                 </Col>
                 <Col lg={6}>
-                    <h3 className="m-2">Profile username</h3>
-                    <p>Profile stats</p>
+                    <h3 className="m-2">{profile?.owner}</h3>
+                    <Row className="justify-content-center no-gutters">
+                        <Col xs={4} className="my-2">
+                            <div>{profile?.achievements_posts_count}</div>
+                            <div>achievement posts</div>
+                        </Col>
+                        <Col xs={4} className="my-2">
+                            <div>{profile?.memo_posts_count}</div>
+                            <div>memo posts</div>
+                        </Col>
+                        <Col xs={4} className="my-2">
+                            <div>{profile?.followers_count}</div>
+                            <div>watched by</div>
+                        </Col>
+                        <Col xs={4} className="my-2">
+                            <div>{profile?.following_count}</div>
+                            <div>watching</div>
+                        </Col>
+                    </Row>
                 </Col>
                 <Col lg={3} className="text-lg-right">
                     <p>Follow button</p>
