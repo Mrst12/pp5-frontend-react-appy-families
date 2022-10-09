@@ -31,7 +31,7 @@ const NavBar = () => {
                 aria-label='create a memo'
                 rel='noreferrer'
             >
-                <i class="fas fa-plus-circle"></i>
+                <i className="fas fa-plus-circle"></i>
                 {' '}
                 Create Memo
             </NavLink>
@@ -42,7 +42,7 @@ const NavBar = () => {
                 aria-label='create an achievement'
                 rel='noreferrer'
             >
-                <i class="fas fa-plus-circle"></i>
+                <i className="fas fa-plus-circle"></i>
                 {' '}
                 Create an Achievement
             </NavLink>
@@ -53,7 +53,7 @@ const NavBar = () => {
                 aria-label='create a todo item'
                 rel='noreferrer'
             >
-                <i class="fas fa-plus-circle"></i>
+                <i className="fas fa-plus-circle"></i>
                 {' '}
                 Create a Task
             </NavLink>
@@ -137,7 +137,7 @@ const NavBar = () => {
                                 aria-label='home page memos'
                                 rel='noreferrer'
                             >
-                                <i class="far fa-sticky-note"></i>
+                                <i className="far fa-sticky-note"></i>
                                 {' '}
                                 Memo
                             </NavLink>
