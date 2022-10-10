@@ -5,6 +5,7 @@ import btnStyles from '../../styles/Button.module.css';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { Link } from 'react-router-dom';
 import Avatar from '../../components/Avatar';
+import { useSetProfileData } from '../../contexts/ProfileDataContext';
 
 const Profile = (props) => {
     const { profile, mobile, imageSize = 55 } = props;
@@ -12,6 +13,8 @@ const Profile = (props) => {
 
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner;
+
+    const {handleFollow} = useSetProfileData();
 
     return (
         <div
@@ -37,7 +40,7 @@ const Profile = (props) => {
                     ) : (
                         <Button
                             className={`{btnStyles.Button} ${btnStyles.Blue}`}
-                            onClick={() => {}}
+                            onClick={() => handleFollow(profile)}
                         >
                             Not watching you!
                         </Button>

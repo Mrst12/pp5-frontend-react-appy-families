@@ -32,7 +32,7 @@ function ProfilePage() {
     const currentUser = useCurrentUser();
     const { id } = useParams();
 
-    const setProfileData = useSetProfileData();
+    const {setProfileData, handleFollow} = useSetProfileData();
     const { pageProfile } = useProfileData();
 
     const [profile] = pageProfile.results;
@@ -103,7 +103,7 @@ function ProfilePage() {
                         ) : (
                             <Button
                                 className={`${btnStyles.Button} ${btnStyles.Blue}`}
-                                onClick={() => { }}
+                                onClick={() => handleFollow(profile)}
                             >
                                 Not watching you!
                             </Button>
@@ -113,7 +113,7 @@ function ProfilePage() {
             </Row>
         </>
     );
-
+//add in memo posts at a later stage
     const mainProfilePosts = (
         <>
             <hr />
