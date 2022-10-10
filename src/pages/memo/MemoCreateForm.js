@@ -6,8 +6,6 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 
-import Upload from "../../assets/upload.png";
-
 import styles from "../../styles/CreateMemoForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
@@ -19,13 +17,28 @@ function MemoCreateForm() {
 
   const textFields = (
     <div className="text-center">
-      {/* Add your form fields here */}
+      <Form.Group>
+        <Form.Label>Attention of:</Form.Label>
+        <Form.Control
+          type="text"
+          name="attention_of"
+          aria-label="attention of"
+        />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label>Content:</Form.Label>
+        <Form.Control
+          as="textarea"
+          rows={6}
+          name="content"
+          aria-label="content"
+        />
+      </Form.Group>
 
-    
-    
+
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
-        onClick={() => {}}
+        onClick={() => { }}
       >
         cancel
       </Button>
