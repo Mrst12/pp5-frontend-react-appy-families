@@ -11,7 +11,6 @@ import Upload from "../../assets/upload.png";
 import styles from "../../styles/CreateMemoForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import Asset from "../../components/Asset";
 
 function MemoCreateForm() {
 
@@ -43,16 +42,7 @@ function MemoCreateForm() {
           <Container
             className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
           >
-            <Form.Group className="text-center">
-              
-                <Form.Label
-                  className="d-flex justify-content-center"
-                  htmlFor="image-upload"
-                >
-                  <Asset src={Upload} message="Click to upload your image" />
-                </Form.Label>
 
-            </Form.Group>
             <div className="d-md-none">{textFields}</div>
           </Container>
         </Col>
