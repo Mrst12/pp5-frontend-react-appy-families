@@ -15,9 +15,10 @@ import Asset from "../../components/Asset";
 import { Alert, Image } from "react-bootstrap";
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
+import { useRedirect } from "../../hooks/useRedirect";
 
 function AchievementCreateForm() {
-
+  useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
 
   const [achievementData, setAchievementData] = useState({
