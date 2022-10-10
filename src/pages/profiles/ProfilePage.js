@@ -16,12 +16,13 @@ import {
     useSetProfileData,
 } from "../../contexts/ProfileDataContext";
 import Achievements from "../achievements/Achievements";
-import {fetchMoreData} from "../../utils/utils";
+import { fetchMoreData } from "../../utils/utils";
 import NoResults from "../../assets/no-results.png";
 import FamilyProfiles from "./FamilyProfiles";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Button, Image } from "react-bootstrap";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { ProfileEditDropdown } from "../../components/MoreDropdown";
 
 
 
@@ -32,7 +33,7 @@ function ProfilePage() {
     const currentUser = useCurrentUser();
     const { id } = useParams();
 
-    const {setProfileData, handleFollow, handleUnfollow} = useSetProfileData();
+    const { setProfileData, handleFollow, handleUnfollow } = useSetProfileData();
     const { pageProfile } = useProfileData();
 
     const [profile] = pageProfile.results;
@@ -61,6 +62,7 @@ function ProfilePage() {
 
     const mainProfile = (
         <>
+            {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
             <Row noGutters className="px-3 text-center">
                 <Col lg={3} className="text-lg-left">
                     <Image
@@ -109,11 +111,11 @@ function ProfilePage() {
                             </Button>
                         ))}
                 </Col>
-                {profile?.content && (<Col className="p-3">{profile.content}</Col>)}
+                {profile?.content && <Col className="p-3">{profile.content}</Col>}
             </Row>
         </>
     );
-//add in memo posts at a later stage
+    //add in memo posts at a later stage
     const mainProfilePosts = (
         <>
             <hr />

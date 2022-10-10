@@ -11,6 +11,9 @@ import AchievementsPage from './pages/achievements/AchievementsPage';
 import AchievementsPostsPage from './pages/achievements/AchievementsPostsPage';
 import AchievementEditForm from './pages/achievements/AchievementEditForm';
 import ProfilePage from './pages/profiles/ProfilePage';
+import UsernameForm from "./pages/profiles/UsernameForm";
+import UserPasswordForm from "./pages/profiles/UserPasswordForm";
+import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 
 
 function App() {
@@ -36,6 +39,9 @@ function App() {
           <Route exact path="/achievements/:id" render={() => <AchievementsPage />} />
           <Route exact path="/achievements/:id/edit" render={() => <AchievementEditForm />} />
           <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
+          <Route exact path="/profiles/:id/edit/username" render={() => <UsernameForm />} />
+          <Route exact path="/profiles/:id/edit/password" render={() => <UserPasswordForm />} />
+          <Route exact path="/profiles/:id/edit" render={() => <ProfileEditForm />} />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </Container>
