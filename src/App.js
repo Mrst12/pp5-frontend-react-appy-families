@@ -15,6 +15,7 @@ import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import MemoPostPage from './pages/memo/MemoPostPage';
+import MemoPostsPage from './pages/memo/MemoPostsPage';
 
 
 function App() {
@@ -23,7 +24,13 @@ function App() {
       < NavBar />
       <Container>
         <Switch>
-          <Route exact path="/" render={() => <h1>Memo page</h1>} />
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <MemoPostsPage message="No results found. Adjust the search keyword." />
+            )}
+          />
           <Route exact path="/todo" render={() => <h1>To Do List</h1>} />
           <Route
             exact
@@ -43,7 +50,7 @@ function App() {
           <Route exact path="/profiles/:id/edit/username" render={() => <UsernameForm />} />
           <Route exact path="/profiles/:id/edit/password" render={() => <UserPasswordForm />} />
           <Route exact path="/profiles/:id/edit" render={() => <ProfileEditForm />} />
-          <Route exact path="/memo_posts/:id" render={() => <MemoPostPage />} /> 
+          <Route exact path="/memo_posts/:id" render={() => <MemoPostPage />} />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </Container>
