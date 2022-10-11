@@ -34,7 +34,7 @@ function MemoPostPage() {
         <Row className="h-100">
             <Col className="py-2 p-0 p-lg-2" lg={8}>
                 <p>Popular profiles for mobile</p>
-                <Memo {...memoPost.results[0]} setMemoPost={setMemoPost} />
+                <Memo {...memoPost.results[0]} setMemoPost={setMemoPost} MemoPostPage />
                 <Container className={appStyles.Content}>
                     Comments
                 </Container>
