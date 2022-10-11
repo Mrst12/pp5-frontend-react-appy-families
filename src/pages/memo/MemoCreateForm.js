@@ -14,6 +14,19 @@ function MemoCreateForm() {
 
   const [errors, setErrors] = useState({});
 
+  const [memoData, setMemoData] = useState({
+    attention_of: "",
+    content: "",
+  });
+  const {attention_of, content} = memoData;
+
+  const handleChange = (event) => {
+    setMemoData({
+      ...memoData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
 
   const textFields = (
     <div className="text-center">
@@ -22,6 +35,8 @@ function MemoCreateForm() {
         <Form.Control
           type="text"
           name="attention_of"
+          value={attention_of}
+          onChange={handleChange}
           aria-label="attention of"
         />
       </Form.Group>
@@ -31,6 +46,8 @@ function MemoCreateForm() {
           as="textarea"
           rows={6}
           name="content"
+          value={content}
+          onChange={handleChange}
           aria-label="content"
         />
       </Form.Group>
