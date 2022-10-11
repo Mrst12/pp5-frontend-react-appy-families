@@ -42,6 +42,22 @@ const Memo = (props) => {
         }
     };
 
+    const handleUnlike = async () => {
+        try {
+           await axiosRes.delete(`/like_memo/${like_id}/`);
+           setMemoPost((prevMemoPost) => ({
+            ...prevMemoPost,
+            results: prevMemoPost.results.map((memo_post) => {
+                return memo_post.id === id
+                ? { ...memo_post, likes_count: memo_post.likes_count -1, like_id: null}
+                : memo_post;
+            }),
+           })); 
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
     return (
         <Card className={styles.Post}>
             <Card.Body>
@@ -65,7 +81,7 @@ const Memo = (props) => {
                             <i className='far fa-heart' />
                         </OverlayTrigger>
                     ) : like_id ? (
-                        <span onClick={() => { }}>
+                        <span onClick={handleUnlike}>
                             <i className={`fas fa-heart ${styles.Heart}`} />
                         </span>
                     ) : currentUser ? (
