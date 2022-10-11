@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, Media, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { axiosRes } from '../../api/axiosDefaults';
 import Avatar from '../../components/Avatar';
 import { MoreDropdown } from '../../components/MoreDropdown';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
@@ -19,10 +20,27 @@ const Memo = (props) => {
         content,
         created_on,
         MemoPostPage,
+        setMemoPost,
     } = props;
 
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner;
+
+    const handleLike = async () => {
+        try {
+            const { data } = await axiosRes.post('/like_memo/', { memo_post: id });
+            setMemoPost((prevMemoPost) => ({
+                ...prevMemoPost,
+                results: prevMemoPost.results.map((memo_post) => {
+                    return memo_post.id === id
+                        ? { ...memo_post, likes_count: memo_post.likes_count + 1, like_id: data.id }
+                        : memo_post;
+                }),
+            }));
+        } catch (err) {
+            console.log(err)
+        }
+    };
 
     return (
         <Card className={styles.Post}>
@@ -47,11 +65,11 @@ const Memo = (props) => {
                             <i className='far fa-heart' />
                         </OverlayTrigger>
                     ) : like_id ? (
-                        <span onClick={() => {}}>
+                        <span onClick={() => { }}>
                             <i className={`fas fa-heart ${styles.Heart}`} />
                         </span>
                     ) : currentUser ? (
-                        <span onClick={() => {}}>
+                        <span onClick={handleLike}>
                             <i className={`far fa-heart ${styles.HeartOutline}`} />
                         </span>
                     ) : (
