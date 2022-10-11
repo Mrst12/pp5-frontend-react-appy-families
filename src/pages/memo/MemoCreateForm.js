@@ -9,6 +9,9 @@ import Container from "react-bootstrap/Container";
 import styles from "../../styles/CreateMemoForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
+import { useHistory } from "react-router-dom";
+import { axiosReq } from "../../api/axiosDefaults";
+import { Alert } from "react-bootstrap";
 
 function MemoCreateForm() {
 
@@ -18,7 +21,9 @@ function MemoCreateForm() {
     attention_of: "",
     content: "",
   });
-  const {attention_of, content} = memoData;
+  const { attention_of, content } = memoData;
+
+  const history = useHistory();
 
   const handleChange = (event) => {
     setMemoData({
@@ -26,6 +31,24 @@ function MemoCreateForm() {
       [event.target.name]: event.target.value,
     });
   };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    const formData = new FormData();
+
+    formData.append('attention_of', attention_of)
+    formData.append('content', content)
+
+    try {
+      const { data } = await axiosReq.post('/memo_posts/', formData);
+      history.push(`/memo_posts/${data.id}`)
+    } catch (err) {
+      console.log(err);
+      if (err.response?.status !== 401) {
+        setErrors(err.response?.data)
+      }
+    }
+  }
 
 
   const textFields = (
@@ -40,6 +63,12 @@ function MemoCreateForm() {
           aria-label="attention of"
         />
       </Form.Group>
+      {errors?.attention_of?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
       <Form.Group>
         <Form.Label>Content:</Form.Label>
         <Form.Control
@@ -51,11 +80,16 @@ function MemoCreateForm() {
           aria-label="content"
         />
       </Form.Group>
+      {errors?.content?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
 
 
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
-        onClick={() => { }}
+        onClick={() => history.goBack()}
       >
         cancel
       </Button>
@@ -66,7 +100,7 @@ function MemoCreateForm() {
   );
 
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <Row>
         <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
           <Container

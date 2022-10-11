@@ -80,7 +80,7 @@ function AchievementCreateForm() {
         />
       </Form.Group>
       {errors?.title?.map((message, idx) => (
-        <Alert variant="warning" key="{idx}">
+        <Alert variant="warning" key={idx}>
           {message}
         </Alert>
       ))}
@@ -96,7 +96,7 @@ function AchievementCreateForm() {
         />
       </Form.Group>
       {errors?.content?.map((message, idx) => (
-        <Alert variant="warning" key="{idx}">
+        <Alert variant="warning" key={idx}>
           {message}
         </Alert>
       ))}
