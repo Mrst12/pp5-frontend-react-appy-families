@@ -19,7 +19,6 @@ const Memo = (props) => {
         attention_of,
         content,
         created_on,
-        MemoPostPage,
         setMemoPost,
     } = props;
 
@@ -82,7 +81,7 @@ const Memo = (props) => {
                     </Link>
                     <div className='d-flex align-items-center'>
                         <span>{created_on}</span>
-                        {is_owner && MemoPostPage && (
+                        {is_owner && setMemoPost && (
                             <MoreDropdown
                                 handleEdit={handleEdit}
                                 handleDelete={handleDelete}
