@@ -57,15 +57,15 @@ const Memo = (props) => {
 
     const handleUnlike = async () => {
         try {
-           await axiosRes.delete(`/like_memo/${like_id}/`);
-           setMemoPost((prevMemoPost) => ({
-            ...prevMemoPost,
-            results: prevMemoPost.results.map((memo_post) => {
-                return memo_post.id === id
-                ? { ...memo_post, likes_count: memo_post.likes_count -1, like_id: null}
-                : memo_post;
-            }),
-           })); 
+            await axiosRes.delete(`/like_memo/${like_id}/`);
+            setMemoPost((prevMemoPost) => ({
+                ...prevMemoPost,
+                results: prevMemoPost.results.map((memo_post) => {
+                    return memo_post.id === id
+                        ? { ...memo_post, likes_count: memo_post.likes_count - 1, like_id: null }
+                        : memo_post;
+                }),
+            }));
         } catch (err) {
             console.log(err);
         }
@@ -91,8 +91,10 @@ const Memo = (props) => {
                 </Media>
             </Card.Body>
             <Card.Body>
-                {attention_of && <Card.Title className='text-center'>{attention_of}</Card.Title>}
-                {content && <Card.Text>{content}</Card.Text>}
+                <Link to={`/memo_posts/${id}`}>
+                    {attention_of && <Card.Title className='text-center'>{attention_of}</Card.Title>}
+                    {content && <Card.Text>{content}</Card.Text>}
+                </Link>
                 <div className={styles.PostBar}>
                     {is_owner ? (
                         <OverlayTrigger placement='top' overlay={<Tooltip>You cant like your own memo!</Tooltip>}>
