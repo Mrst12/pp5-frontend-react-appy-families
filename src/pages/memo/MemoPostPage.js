@@ -9,20 +9,28 @@ import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import Memo from "./Memo";
 
+import MemoCommentCreateForm from "../comments/MemoCommentCreateForm";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
+
+
 function MemoPostPage() {
     const { id } = useParams();
     const [memoPost, setMemoPost] = useState({ results: [] });
 
+    const currentUser = useCurrentUser();
+    const profile_image = currentUser?.profile_image;
+    const [comments, setComments] = useState({ results: [] });
+
     useEffect(() => {
         const handleMount = async () => {
             try {
-                const [{data: memoPost}] = await Promise.all([
+                const [{ data: memoPost }] = await Promise.all([
                     axiosReq.get(`/memo_posts/${id}`),
                 ])
-                setMemoPost({results: [memoPost]})
+                setMemoPost({ results: [memoPost] })
                 console.log(memoPost);
             } catch (err) {
-               console.log(err); 
+                console.log(err);
             }
         }
 
@@ -36,7 +44,17 @@ function MemoPostPage() {
                 <p>Popular profiles for mobile</p>
                 <Memo {...memoPost.results[0]} setMemoPost={setMemoPost} MemoPostPage />
                 <Container className={appStyles.Content}>
-                    Comments
+                    {currentUser ? (
+                        <MemoCommentCreateForm
+                            profile_id={currentUser.profile_id}
+                            profileImage={profile_image}
+                            memo_post={id}
+                            setMemoPost={setMemoPost}
+                            setComments={setComments}
+                        />
+                    ) : comments.results.length ? (
+                        "Comments"
+                    ) : null}
                 </Container>
             </Col>
             <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
