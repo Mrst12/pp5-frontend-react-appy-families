@@ -16,6 +16,7 @@ import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import MemoPostPage from './pages/memo/MemoPostPage';
 import MemoPostsPage from './pages/memo/MemoPostsPage';
+import MemoEditForm from './pages/memo/MemoEditForm';
 
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
           <Route exact path="/profiles/:id/edit/password" render={() => <UserPasswordForm />} />
           <Route exact path="/profiles/:id/edit" render={() => <ProfileEditForm />} />
           <Route exact path="/memo_posts/:id" render={() => <MemoPostPage />} />
+          <Route exact path="/memo_posts/:id/edit" render={() => <MemoEditForm />} />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </Container>
