@@ -11,6 +11,7 @@ import Memo from "./Memo";
 
 import MemoCommentCreateForm from "../comments/MemoCommentCreateForm";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import MemoComment from "../comments/MemoComment";
 
 
 function MemoPostPage() {
@@ -24,10 +25,12 @@ function MemoPostPage() {
     useEffect(() => {
         const handleMount = async () => {
             try {
-                const [{ data: memoPost }] = await Promise.all([
+                const [{ data: memoPost }, {data: comments}] = await Promise.all([
                     axiosReq.get(`/memo_posts/${id}`),
+                    axiosReq.get(`/comments_memo_posts/?memo_post=${id}`)
                 ])
-                setMemoPost({ results: [memoPost] })
+                setMemoPost({ results: [memoPost] });
+                setComments(comments);
                 console.log(memoPost);
             } catch (err) {
                 console.log(err);
@@ -55,6 +58,15 @@ function MemoPostPage() {
                     ) : comments.results.length ? (
                         "Comments"
                     ) : null}
+                    {comments.results.length ? (
+                        comments.results.map(comments => (
+                            <MemoComment key={comments.id} {...comments} />
+                        ))
+                    ) : currentUser ? (
+                        <span>No comments yet, be the first to comment!</span>
+                    ) : (
+                        <span>No comments yet...</span>
+                    )}
                 </Container>
             </Col>
             <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
