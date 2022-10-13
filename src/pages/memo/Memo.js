@@ -31,6 +31,15 @@ const Memo = (props) => {
         history.push(`/memo_posts/${id}/edit`)
     }
 
+    const handleDelete = async () => {
+        try {
+            await axiosRes.delete(`/memo_posts/${id}/`);
+            history.goBack();
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
     const handleLike = async () => {
         try {
             const { data } = await axiosRes.post('/like_memo/', { memo_post: id });
@@ -76,6 +85,7 @@ const Memo = (props) => {
                         {is_owner && MemoPostPage && (
                             <MoreDropdown
                                 handleEdit={handleEdit}
+                                handleDelete={handleDelete}
                             />
                         )}
                     </div>
