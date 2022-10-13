@@ -12,6 +12,8 @@ import { axiosReq } from "../../api/axiosDefaults";
 import Memo from "./Memo";
 import NoResults from "../../assets/no-results.png";
 import Asset from "../../components/Asset";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { fetchMoreData } from "../../utils/utils";
 
 function MemoPostsPage({ message }) {
     const [memo_post, setMemoPost] = useState({ results: [] });
@@ -47,7 +49,7 @@ function MemoPostsPage({ message }) {
                 <i className={`fas fa-search ${styles.SearchIcon}`} />
                 <Form
                     className={styles.SearchBar}
-                    onSubmit={(event => event.preventDefault() )}
+                    onSubmit={(event => event.preventDefault())}
                 >
                     <Form.Control
                         value={query}
@@ -62,9 +64,18 @@ function MemoPostsPage({ message }) {
                 {hasLoaded ? (
                     <>
                         {memo_post.results.length ? (
-                            memo_post.results.map((memo_post) => (
-                                <Memo key={memo_post.id} {...memo_post} setMemoPost={setMemoPost} />
-                            ))
+                            <InfiniteScroll
+                                children={
+                                    memo_post.results.map((memo_post) => (
+                                        <Memo key={memo_post.id} {...memo_post} setMemoPost={setMemoPost} />
+                                    ))
+                                }
+                                dataLength={memo_post.results.length}
+                                loader={<Asset spinner />}
+                                hasMore={!!memo_post.next}
+                                next={() => fetchMoreData(memo_post, setMemoPost)}
+                            />
+
                         ) : (
                             <Container className={appStyles.Content}>
                                 <Asset src={NoResults} message={message} />
