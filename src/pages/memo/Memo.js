@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Media, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { axiosRes } from '../../api/axiosDefaults';
 import Avatar from '../../components/Avatar';
 import { MoreDropdown } from '../../components/MoreDropdown';
@@ -25,6 +25,11 @@ const Memo = (props) => {
 
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner;
+    const history = useHistory();
+
+    const handleEdit = () => {
+        history.push(`/memo_posts/${id}/edit`)
+    }
 
     const handleLike = async () => {
         try {
@@ -68,7 +73,11 @@ const Memo = (props) => {
                     </Link>
                     <div className='d-flex align-items-center'>
                         <span>{created_on}</span>
-                        {is_owner && MemoPostPage && <MoreDropdown />}
+                        {is_owner && MemoPostPage && (
+                            <MoreDropdown
+                                handleEdit={handleEdit}
+                            />
+                        )}
                     </div>
                 </Media>
             </Card.Body>
