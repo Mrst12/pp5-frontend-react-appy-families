@@ -12,6 +12,9 @@ import Memo from "./Memo";
 import MemoCommentCreateForm from "../comments/MemoCommentCreateForm";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import MemoComment from "../comments/MemoComment";
+import InfiniteScroll from "react-infinite-scroll-component";
+import Asset from "../../components/Asset";
+import { fetchMoreData } from "../../utils/utils";
 
 
 function MemoPostPage() {
@@ -60,14 +63,20 @@ function MemoPostPage() {
                         "Comments"
                     ) : null}
                     {comments.results.length ? (
-                        comments.results.map(comments => (
+                        <InfiniteScroll
+                            children={comments.results.map((comments) => (
                             <MemoComment
                                 key={comments.id}
                                 {...comments}
                                 setMemoPost={setMemoPost}
                                 setComments={setComments}
                             />
-                        ))
+                        ))}
+                        dataLength={comments.results.length}
+                        loader={<Asset spinner />}
+                        hasMore={!!comments.next}
+                        next={() => fetchMoreData(comments, setComments)}
+                        />
                     ) : currentUser ? (
                         <span>No comments yet, be the first to comment!</span>
                     ) : (
