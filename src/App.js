@@ -17,6 +17,7 @@ import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import MemoPostPage from './pages/memo/MemoPostPage';
 import MemoPostsPage from './pages/memo/MemoPostsPage';
 import MemoEditForm from './pages/memo/MemoEditForm';
+import TodoCreateForm from './pages/to_do/TodoCreateForm';
 
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
           <Route exact path="/profiles/:id/edit" render={() => <ProfileEditForm />} />
           <Route exact path="/memo_posts/:id" render={() => <MemoPostPage />} />
           <Route exact path="/memo_posts/:id/edit" render={() => <MemoEditForm />} />
+          <Route exact path="/todo/create" render={() =><TodoCreateForm />} />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </Container>
