@@ -32,6 +32,7 @@ function MemoPostPage() {
                 setMemoPost({ results: [memoPost] });
                 setComments(comments);
                 console.log(memoPost);
+                console.log(comments);
             } catch (err) {
                 console.log(err);
             }

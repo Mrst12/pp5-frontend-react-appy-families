@@ -87,7 +87,7 @@ function AchievementsPostsPage(message) {
             )}
           </>
         ) : (
-          <Container classNmae={appStyles.Content}>
+          <Container className={appStyles.Content}>
             <Asset spinner />
           </Container>
         )}
