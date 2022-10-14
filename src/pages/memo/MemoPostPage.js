@@ -61,7 +61,12 @@ function MemoPostPage() {
                     ) : null}
                     {comments.results.length ? (
                         comments.results.map(comments => (
-                            <MemoComment key={comments.id} {...comments} />
+                            <MemoComment
+                                key={comments.id}
+                                {...comments}
+                                setMemoPost={setMemoPost}
+                                setComments={setComments}
+                            />
                         ))
                     ) : currentUser ? (
                         <span>No comments yet, be the first to comment!</span>
