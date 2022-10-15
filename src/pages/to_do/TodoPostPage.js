@@ -7,6 +7,7 @@ import Container from "react-bootstrap/Container";
 import appStyles from "../../App.module.css";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
+import Todo from "./Todo";
 
 function TodoPostPage() {
     const { id } = useParams();
@@ -34,7 +35,7 @@ function TodoPostPage() {
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <p>Popular profiles for mobile</p>
-        <p>Post component</p>
+        <Todo {...todo.results[0]} setTodo={setTodo} />
         <Container className={appStyles.Content}>
           Comments
         </Container>
