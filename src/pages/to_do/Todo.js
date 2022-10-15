@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, Media } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Avatar from '../../components/Avatar';
+import { MoreDropdown } from '../../components/MoreDropdown';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import styles from '../../styles/Todo.module.css';
 
@@ -17,6 +18,7 @@ const Todo = (props) => {
         content,
         status,
         urgent,
+        setTodo,
     } = props;
 
     const currentUser = useCurrentUser();
@@ -30,8 +32,21 @@ const Todo = (props) => {
                         <Avatar src={profile_image} height={55} />
                         {owner}
                     </Link>
+                    <div className='d-flex align-items-center'>
+                        <span>{created_on}</span>
+                        {is_owner && setTodo && <MoreDropdown />}
+                    </div>
                 </Media>
             </Card.Body>
+            <Link to={`/to_do/${id}`}>
+                <Card.Body>
+                    {task_title && <>Task title:<Card.Title className='text_center'>{task_title}</Card.Title></>}
+                    {due_date && <>Due date:<Card.Text>{due_date}</Card.Text></>}
+                    {content && <>Task: <Card.Text>{content}</Card.Text></>}
+                    {status && <>Status: <Card.Text>{status}</Card.Text></>}
+                    {urgent && <>Urgent:<Card.Text>{urgent}</Card.Text></>}
+                </Card.Body>
+            </Link>
         </Card>
     )
 }
