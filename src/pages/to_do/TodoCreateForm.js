@@ -14,6 +14,21 @@ function TodoCreateForm() {
 
   const [errors, setErrors] = useState({});
 
+  const [todoData, setTodoData] = useState({
+    task_title: "",
+    due_date: "",
+    content: "",
+    status: "",
+    urgent:"",
+  });
+  const { task_title, due_date, content, status, urgent } = todoData;
+
+  const handleChange = (event) => {
+    setTodoData({
+      ...todoData,
+      [event.target.name]: event.target.value,
+    });
+  };
 
   const textFields = (
     <div className="text-center">
@@ -22,6 +37,8 @@ function TodoCreateForm() {
         <Form.Control
           type="text"
           name="task_title"
+          value={task_title}
+          onChange={handleChange}
           aria-label="task title"
         />
       </Form.Group>
@@ -30,6 +47,8 @@ function TodoCreateForm() {
         <Form.Control
           type="date"
           name="due_date"
+          value={due_date}
+          onChange={handleChange}
           aria-label="due date"
         />
       </Form.Group>
@@ -39,6 +58,8 @@ function TodoCreateForm() {
           as="textarea"
           rows={6}
           name="content"
+          value={content}
+          onChange={handleChange}
           aria-label="content"
         />
       </Form.Group>
@@ -47,7 +68,8 @@ function TodoCreateForm() {
           <Form.Control
             type="checkbox"
             name="status"
-            value="pending"
+            value={status}
+            handleChange={handleChange}
             aria-label="status"
           />
         
@@ -55,7 +77,8 @@ function TodoCreateForm() {
           <Form.Control
             type="checkbox"
             name="status"
-            value="started"
+            value={status}
+            handleChange={handleChange}
             aria-label="status"
           />
         
@@ -63,7 +86,8 @@ function TodoCreateForm() {
           <Form.Control
             type="checkbox"
             name="status"
-            value="done"
+            value={status}
+            handleChange={handleChange}
             aria-label="status"
           />
         
@@ -72,7 +96,10 @@ function TodoCreateForm() {
         <Form.Label>Urgent</Form.Label>
         <Form.Control
           type="checkbox"
-          checked
+          name="urgent"
+          value={urgent}
+          handleChange={handleChange}
+          aria-label="is it urgent"
         />
       </Form.Group>
 
