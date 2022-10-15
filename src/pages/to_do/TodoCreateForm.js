@@ -17,13 +17,70 @@ function TodoCreateForm() {
 
   const textFields = (
     <div className="text-center">
-      {/* Add your form fields here */}
+      <Form.Group>
+        <Form.Label>Task Title:</Form.Label>
+        <Form.Control
+          type="text"
+          name="task_title"
+          aria-label="task title"
+        />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label>Due date:</Form.Label>
+        <Form.Control
+          type="date"
+          name="due_date"
+          aria-label="due date"
+        />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label>Task:</Form.Label>
+        <Form.Control
+          as="textarea"
+          rows={6}
+          name="content"
+          aria-label="content"
+        />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label>pending:</Form.Label>
+          <Form.Control
+            type="checkbox"
+            name="status"
+            value="pending"
+            aria-label="status"
+          />
+        
+        <Form.Label>started:</Form.Label>
+          <Form.Control
+            type="checkbox"
+            name="status"
+            value="started"
+            aria-label="status"
+          />
+        
+        <Form.Label>done:</Form.Label>
+          <Form.Control
+            type="checkbox"
+            name="status"
+            value="done"
+            aria-label="status"
+          />
+        
+      </Form.Group>
+      <Form.Group>
+        <Form.Label>Urgent</Form.Label>
+        <Form.Control
+          type="checkbox"
+          checked
+        />
+      </Form.Group>
 
-    
-    
+
+
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
-        onClick={() => {}}
+        onClick={() => { }}
       >
         cancel
       </Button>
@@ -36,23 +93,6 @@ function TodoCreateForm() {
   return (
     <Form>
       <Row>
-        <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
-          <Container
-            className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
-          >
-            <Form.Group className="text-center">
-              
-                <Form.Label
-                  className="d-flex justify-content-center"
-                  htmlFor="image-upload"
-                >
-                  ASSET
-                </Form.Label>
-
-            </Form.Group>
-            <div className="d-md-none">{textFields}</div>
-          </Container>
-        </Col>
         <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
           <Container className={appStyles.Content}>{textFields}</Container>
         </Col>
