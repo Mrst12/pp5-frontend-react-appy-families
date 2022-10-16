@@ -20,6 +20,7 @@ import MemoEditForm from './pages/memo/MemoEditForm';
 import TodoCreateForm from './pages/to_do/TodoCreateForm';
 import TodoPostPage from './pages/to_do/TodoPostPage';
 import TodoPostsPage from './pages/to_do/TodoPostsPage';
+import TodoEditForm from './pages/to_do/TodoEditForm';
 
 
 function App() {
@@ -64,6 +65,7 @@ function App() {
           <Route exact path="/memo_posts/:id/edit" render={() => <MemoEditForm />} />
           <Route exact path="/todo/create" render={() => <TodoCreateForm />} />
           <Route exact path="/to_do/:id" render={() => <TodoPostPage />} />
+          <Route exact path="/to_do/:id/edit" render={() => <TodoEditForm />} />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </Container>
