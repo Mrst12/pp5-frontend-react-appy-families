@@ -19,6 +19,7 @@ import MemoPostsPage from './pages/memo/MemoPostsPage';
 import MemoEditForm from './pages/memo/MemoEditForm';
 import TodoCreateForm from './pages/to_do/TodoCreateForm';
 import TodoPostPage from './pages/to_do/TodoPostPage';
+import TodoPostsPage from './pages/to_do/TodoPostsPage';
 
 
 function App() {
@@ -34,7 +35,13 @@ function App() {
               <MemoPostsPage message="No results found. Adjust the search keyword." />
             )}
           />
-          <Route exact path="/todo" render={() => <h1>To Do List</h1>} />
+          <Route
+            exact
+            path="/todo"
+            render={() => (
+              <TodoPostsPage message="No results found. Adjust the search keyword" />
+            )}
+          />
           <Route
             exact
             path="/achievements"
@@ -55,7 +62,7 @@ function App() {
           <Route exact path="/profiles/:id/edit" render={() => <ProfileEditForm />} />
           <Route exact path="/memo_posts/:id" render={() => <MemoPostPage />} />
           <Route exact path="/memo_posts/:id/edit" render={() => <MemoEditForm />} />
-          <Route exact path="/todo/create" render={() =><TodoCreateForm />} />
+          <Route exact path="/todo/create" render={() => <TodoCreateForm />} />
           <Route exact path="/to_do/:id" render={() => <TodoPostPage />} />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
