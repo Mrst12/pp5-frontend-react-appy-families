@@ -21,6 +21,7 @@ import TodoCreateForm from './pages/to_do/TodoCreateForm';
 import TodoPostPage from './pages/to_do/TodoPostPage';
 import TodoPostsPage from './pages/to_do/TodoPostsPage';
 import TodoEditForm from './pages/to_do/TodoEditForm';
+import About from './pages/About';
 
 
 function App() {
@@ -51,7 +52,7 @@ function App() {
             )}
           />
           <Route exact path="/signup" render={() => <SignUpForm />} />
-          <Route exact path="/about" render={() => <h1>About</h1>} />
+          <Route exact path="/about" render={() => <About />} />
           <Route exact path="/login" render={() => <SignInForm />} />
           <Route exact path="/memo/create" render={() => <MemoCreateForm />} />
           <Route exact path="/achievement/create" render={() => <AchievementCreateForm />} />
