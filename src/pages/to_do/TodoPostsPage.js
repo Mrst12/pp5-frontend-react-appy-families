@@ -12,6 +12,8 @@ import { axiosReq } from "../../api/axiosDefaults";
 import Todo from "./Todo";
 import NoResults from "../../assets/no-results.png";
 import Asset from "../../components/Asset";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { fetchMoreData } from "../../utils/utils";
 
 function TodoPostsPage({ message }) {
     const [todo, setTodo] = useState({ results: [] });
@@ -44,9 +46,9 @@ function TodoPostsPage({ message }) {
         <Row className="h-100">
             <Col className="py-2 p-0 p-lg-2" lg={8}>
                 <p>Popular profiles mobile</p>
-                <i className={`fas fa-search ${styles.SearchIcon}`}/>
+                <i className={`fas fa-search ${styles.SearchIcon}`} />
                 <Form className={styles.SearchBar}
-                onSubmit={(event) => event.preventDefault()}
+                    onSubmit={(event) => event.preventDefault()}
                 >
                     <Form.Control
                         value={query}
@@ -60,9 +62,17 @@ function TodoPostsPage({ message }) {
                 {hasLoaded ? (
                     <>
                         {todo.results.length ? (
-                            todo.results.map((todo) => (
-                                <Todo key={todo.id} {...todo} setTodo={setTodo} />
-                            ))
+                            <InfiniteScroll
+                                children={
+                                    todo.results.map((todo) => (
+                                        <Todo key={todo.id} {...todo} setTodo={setTodo} />
+                                    ))
+                                }
+                                dataLength={todo.results.length}
+                                loader={<Asset spinner />}
+                                hasMore={!!todo.next}
+                                next={() => fetchMoreData(todo, setTodo)}
+                            />
                         ) : (
                             <Container className={appStyles.Content}>
                                 <Asset src={NoResults} message={message} />
