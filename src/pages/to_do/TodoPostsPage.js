@@ -14,6 +14,7 @@ import NoResults from "../../assets/no-results.png";
 import Asset from "../../components/Asset";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
+import FamilyProfiles from "../profiles/FamilyProfiles";
 
 function TodoPostsPage({ message }) {
     const [todo, setTodo] = useState({ results: [] });
@@ -45,7 +46,7 @@ function TodoPostsPage({ message }) {
     return (
         <Row className="h-100">
             <Col className="py-2 p-0 p-lg-2" lg={8}>
-                <p>Popular profiles mobile</p>
+                <FamilyProfiles mobile />
                 <i className={`fas fa-search ${styles.SearchIcon}`} />
                 <Form className={styles.SearchBar}
                     onSubmit={(event) => event.preventDefault()}
@@ -86,7 +87,7 @@ function TodoPostsPage({ message }) {
                 )}
             </Col>
             <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
-                <p>Popular profiles for desktop</p>
+                <FamilyProfiles />
             </Col>
         </Row>
     );
