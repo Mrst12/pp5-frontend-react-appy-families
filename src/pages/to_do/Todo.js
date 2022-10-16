@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, Media } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import { axiosRes } from '../../api/axiosDefaults';
 import Avatar from '../../components/Avatar';
 import { MoreDropdown } from '../../components/MoreDropdown';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
@@ -23,6 +24,20 @@ const Todo = (props) => {
 
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner;
+    const history = useHistory();
+
+    const handleEdit = () => {
+        history.push(`/to_do/${id}/edit`)
+    }
+
+    const handleDelete = async () => {
+        try {
+            await axiosRes.delete(`/to_do/${id}`);
+            history.goBack();
+        } catch (err) {
+            console.log(err);
+        }
+    };
 
     return (
         <Card className={styles.Post}>
@@ -34,7 +49,12 @@ const Todo = (props) => {
                     </Link>
                     <div className='d-flex align-items-center'>
                         <span>{created_on}</span>
-                        {is_owner && setTodo && <MoreDropdown />}
+                        {is_owner && setTodo && (
+                            <MoreDropdown
+                                handleEdit={handleEdit}
+                                handleDelete={handleDelete}
+                            />
+                        )}
                     </div>
                 </Media>
             </Card.Body>
