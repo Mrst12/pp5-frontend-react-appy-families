@@ -1,5 +1,6 @@
 import styles from './App.module.css';
 import NavBar from './components/NavBar';
+import NavBarSmall from './components/NavBarSmall';
 import Container from 'react-bootstrap/Container';
 import { NavLink, Route, Switch } from 'react-router-dom';
 import './api/axiosDefaults';
@@ -30,11 +31,18 @@ function App() {
     <div className={styles.App}>
       {/* heading */}
       <Row>
+        {/*large screens*/}
         <Col className={`${styles.HeadingLgScreen} ${styles.Heading}`}>
           <NavLink to="/" className={styles.HeadingLink}>
             <h1>Appy Families</h1>
           </NavLink>
         </Col>
+
+        {/* small screens */}
+        <Col sm={12} className={`${styles.SmHeading} ${styles.NavSmScreen}`}>
+          <NavBarSmall />
+        </Col>
+
       </Row>
       < NavBar />
       <Container>

@@ -23,8 +23,16 @@
     font-size: 300%;
 }
 
+.SmHeading {
+    background-color: #c8edf9;
+}
+
 .HeadingLink {
     padding: 5px;
+}
+
+.NavSmScreen {
+    display: none;
 }
 
 .Main {
