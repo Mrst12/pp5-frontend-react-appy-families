@@ -1,6 +1,6 @@
 .App {
     font-family: 'Montserrat', sans-serif;
-    background-color: #d8f6fe;
+    /*background-color: #d8f6fe;*/
     min-height: 100vh;
 }
 
@@ -52,11 +52,23 @@
     top: 150px;
 }
 
-.Content {
-    background-color: #ffffff;
+.LeftSide {
+    border-right: 1px solid #060029;
+    height: 1000px;
+}
+
+.Middle {
+    position: relative;
+    margin: 0 auto;
+}
+
+.RightSide {
+    position: fixed;
+    right: 25px;
+    top: 150px;
     padding: 10px;
-    border-radius: 2px;
-    border: 1px solid #dadadf;
+    border-left: 1px solid #060029;
+    height: 1000px;
 }
 
 .FillerImage {
