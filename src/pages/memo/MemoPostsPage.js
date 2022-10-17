@@ -44,9 +44,9 @@ function MemoPostsPage({ message }) {
     }, [query, pathname]);
 
     return (
-        <Row className="h-100">
-            <Col className="py-2 p-0 p-lg-2" lg={8}>
-                <FamilyProfiles mobile />
+        <Container>
+            <div>
+
                 <i className={`fas fa-search ${styles.SearchIcon}`} />
                 <Form
                     className={styles.SearchBar}
@@ -62,34 +62,34 @@ function MemoPostsPage({ message }) {
 
                     />
                 </Form>
-                {hasLoaded ? (
-                    <>
-                        {memo_post.results.length ? (
-                            <InfiniteScroll
-                                children={
-                                    memo_post.results.map((memo_post) => (
-                                        <Memo key={memo_post.id} {...memo_post} setMemoPost={setMemoPost} />
-                                    ))
-                                }
-                                dataLength={memo_post.results.length}
-                                loader={<Asset spinner />}
-                                hasMore={!!memo_post.next}
-                                next={() => fetchMoreData(memo_post, setMemoPost)}
-                            />
+            </div>
+            {hasLoaded ? (
+                <>
+                    {memo_post.results.length ? (
+                        <InfiniteScroll
+                            children={
+                                memo_post.results.map((memo_post) => (
+                                    <Memo key={memo_post.id} {...memo_post} setMemoPost={setMemoPost} />
+                                ))
+                            }
+                            dataLength={memo_post.results.length}
+                            loader={<Asset spinner />}
+                            hasMore={!!memo_post.next}
+                            next={() => fetchMoreData(memo_post, setMemoPost)}
+                        />
 
-                        ) : (
-                            <Container className={appStyles.Content}>
-                                <Asset src={NoResults} message={message} />
-                            </Container>
-                        )}
-                    </>
-                ) : (
-                    <Container className={appStyles.Content}>
-                        <Asset spinner />
-                    </Container>
-                )}
-            </Col>
-        </Row>
+                    ) : (
+                        <Container className={appStyles.Content}>
+                            <Asset src={NoResults} message={message} />
+                        </Container>
+                    )}
+                </>
+            ) : (
+                <Container className={appStyles.Content}>
+                    <Asset spinner />
+                </Container>
+            )}
+        </Container>
     );
 }
 
