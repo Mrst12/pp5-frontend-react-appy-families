@@ -31,12 +31,25 @@
     padding: 5px;
 }
 
+/*Navbar*/
+
 .NavSmScreen {
     display: none;
+    z-index: 6;
+    position: fixed;
+    top: 35px;
 }
 
-.Main {
-    padding-top: 81px;
+.NavLgScreen {
+    position: fixed;
+    top: 135px;
+    left: 0;
+}
+
+/*left, right and center parts of page*/
+.MainContent {
+    position: relative;
+    top: 150px;
 }
 
 .Content {

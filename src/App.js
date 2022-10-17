@@ -42,51 +42,59 @@ function App() {
         <Col sm={12} className={`${styles.SmHeading} ${styles.NavSmScreen}`}>
           <NavBarSmall />
         </Col>
-
       </Row>
-      < NavBar />
-      <Container>
-        <Switch>
-          <Route
-            exact
-            path="/"
-            render={() => (
-              <MemoPostsPage message="No results found. Adjust the search keyword." />
-            )}
-          />
-          <Route
-            exact
-            path="/todo"
-            render={() => (
-              <TodoPostsPage message="No results found. Adjust the search keyword" />
-            )}
-          />
-          <Route
-            exact
-            path="/achievements"
-            render={() => (
-              <AchievementsPostsPage message="No results found, please adjust the search keyword" />
-            )}
-          />
-          <Route exact path="/signup" render={() => <SignUpForm />} />
-          <Route exact path="/about" render={() => <About />} />
-          <Route exact path="/login" render={() => <SignInForm />} />
-          <Route exact path="/memo/create" render={() => <MemoCreateForm />} />
-          <Route exact path="/achievement/create" render={() => <AchievementCreateForm />} />
-          <Route exact path="/achievements/:id" render={() => <AchievementsPage />} />
-          <Route exact path="/achievements/:id/edit" render={() => <AchievementEditForm />} />
-          <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
-          <Route exact path="/profiles/:id/edit/username" render={() => <UsernameForm />} />
-          <Route exact path="/profiles/:id/edit/password" render={() => <UserPasswordForm />} />
-          <Route exact path="/profiles/:id/edit" render={() => <ProfileEditForm />} />
-          <Route exact path="/memo_posts/:id" render={() => <MemoPostPage />} />
-          <Route exact path="/memo_posts/:id/edit" render={() => <MemoEditForm />} />
-          <Route exact path="/todo/create" render={() => <TodoCreateForm />} />
-          <Route exact path="/to_do/:id" render={() => <TodoPostPage />} />
-          <Route exact path="/to_do/:id/edit" render={() => <TodoEditForm />} />
-          <Route render={() => <p>Page not found!</p>} />
-        </Switch>
-      </Container>
+      <br />
+
+      <Row className={styles.MainContent}>
+        {/*Navbar */}
+        <Col lg={3} className={`${styles.LeftSide} ${styles.NavLgScreen}`}>
+          < NavBar />
+        </Col>
+
+
+        <Container>
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={() => (
+                <MemoPostsPage message="No results found. Adjust the search keyword." />
+              )}
+            />
+            <Route
+              exact
+              path="/todo"
+              render={() => (
+                <TodoPostsPage message="No results found. Adjust the search keyword" />
+              )}
+            />
+            <Route
+              exact
+              path="/achievements"
+              render={() => (
+                <AchievementsPostsPage message="No results found, please adjust the search keyword" />
+              )}
+            />
+            <Route exact path="/signup" render={() => <SignUpForm />} />
+            <Route exact path="/about" render={() => <About />} />
+            <Route exact path="/login" render={() => <SignInForm />} />
+            <Route exact path="/memo/create" render={() => <MemoCreateForm />} />
+            <Route exact path="/achievement/create" render={() => <AchievementCreateForm />} />
+            <Route exact path="/achievements/:id" render={() => <AchievementsPage />} />
+            <Route exact path="/achievements/:id/edit" render={() => <AchievementEditForm />} />
+            <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
+            <Route exact path="/profiles/:id/edit/username" render={() => <UsernameForm />} />
+            <Route exact path="/profiles/:id/edit/password" render={() => <UserPasswordForm />} />
+            <Route exact path="/profiles/:id/edit" render={() => <ProfileEditForm />} />
+            <Route exact path="/memo_posts/:id" render={() => <MemoPostPage />} />
+            <Route exact path="/memo_posts/:id/edit" render={() => <MemoEditForm />} />
+            <Route exact path="/todo/create" render={() => <TodoCreateForm />} />
+            <Route exact path="/to_do/:id" render={() => <TodoPostPage />} />
+            <Route exact path="/to_do/:id/edit" render={() => <TodoEditForm />} />
+            <Route render={() => <p>Page not found!</p>} />
+          </Switch>
+        </Container>
+        </Row>
     </div>
 
   );
