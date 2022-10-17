@@ -4,6 +4,29 @@
     min-height: 100vh;
 }
 
+/*heading*/
+.Heading {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 5;
+    background-color: #c8edf9;
+    border-bottom: 1px solid #060029;
+}
+
+.Heading h1 {
+    font-family: 'Bungee', cursive;
+    color: #060029;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 300%;
+}
+
+.HeadingLink {
+    padding: 5px;
+}
+
 .Main {
     padding-top: 81px;
 }

@@ -1,7 +1,7 @@
 import styles from './App.module.css';
 import NavBar from './components/NavBar';
 import Container from 'react-bootstrap/Container';
-import { Route, Switch } from 'react-router-dom';
+import { NavLink, Route, Switch } from 'react-router-dom';
 import './api/axiosDefaults';
 import SignUpForm from './pages/auth/SignUpForm';
 import SignInForm from './pages/auth/SignInForm';
@@ -22,11 +22,20 @@ import TodoPostPage from './pages/to_do/TodoPostPage';
 import TodoPostsPage from './pages/to_do/TodoPostsPage';
 import TodoEditForm from './pages/to_do/TodoEditForm';
 import About from './pages/About';
+import { Col, Row } from 'react-bootstrap';
 
 
 function App() {
   return (
     <div className={styles.App}>
+      {/* heading */}
+      <Row>
+        <Col className={`${styles.HeadingLgScreen} ${styles.Heading}`}>
+          <NavLink to="/" className={styles.HeadingLink}>
+            <h1>Appy Families</h1>
+          </NavLink>
+        </Col>
+      </Row>
       < NavBar />
       <Container>
         <Switch>

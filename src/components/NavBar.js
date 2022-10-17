@@ -117,9 +117,9 @@ const NavBar = () => {
     );
     return (
         <div>
-            <div fixed="top">
+            {/*<div fixed="top">
                 <h1 className={styles.heading}>APPY FAMILIES</h1>
-            </div>
+    </div>*/}
             <Container>
                 <Navbar expanded={expanded} expand="md">
                     <Navbar.Toggle
