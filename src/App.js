@@ -24,6 +24,7 @@ import TodoPostsPage from './pages/to_do/TodoPostsPage';
 import TodoEditForm from './pages/to_do/TodoEditForm';
 import About from './pages/About';
 import { Col, Row } from 'react-bootstrap';
+import FamilyProfiles from './pages/profiles/FamilyProfiles';
 
 
 function App() {
@@ -51,8 +52,8 @@ function App() {
           < NavBar />
         </Col>
 
-
-        <Container>
+        {/*main content*/}
+        <Col sm={12} md={8} lg={6} className={styles.Middle}>
           <Switch>
             <Route
               exact
@@ -93,7 +94,12 @@ function App() {
             <Route exact path="/to_do/:id/edit" render={() => <TodoEditForm />} />
             <Route render={() => <p>Page not found!</p>} />
           </Switch>
-        </Container>
+        </Col>
+
+        {/* Family profiles*/}
+        <Col md={4} lg={3} className={styles.RightSide}>
+          <FamilyProfiles />
+        </Col>
         </Row>
     </div>
 
