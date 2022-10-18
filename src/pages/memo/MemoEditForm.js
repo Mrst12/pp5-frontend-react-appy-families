@@ -28,18 +28,18 @@ function MemoEditForm() {
 
   useEffect(() => {
     const handleMount = async () => {
-        try {
-            const {data} = await axiosReq.get(`/memo_posts/${id}/`);
-            const {attention_of, content, is_owner} = data;
+      try {
+        const { data } = await axiosReq.get(`/memo_posts/${id}/`);
+        const { attention_of, content, is_owner } = data;
 
-            is_owner ? setMemoData({attention_of, content}) : history.push('/');
-        } catch (err) {
-           console.log(err); 
-        }
+        is_owner ? setMemoData({ attention_of, content }) : history.push('/');
+      } catch (err) {
+        console.log(err);
+      }
     };
 
     handleMount();
-  },[history, id]);
+  }, [history, id]);
 
   const handleChange = (event) => {
     setMemoData({
@@ -66,63 +66,60 @@ function MemoEditForm() {
     }
   }
 
-
-  const textFields = (
-    <div className="text-center">
-      <Form.Group>
-        <Form.Label>Attention of:</Form.Label>
-        <Form.Control
-          type="text"
-          name="attention_of"
-          value={attention_of}
-          onChange={handleChange}
-          aria-label="attention of"
-        />
-      </Form.Group>
-      {errors?.attention_of?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))}
-
-      <Form.Group>
-        <Form.Label>Content:</Form.Label>
-        <Form.Control
-          as="textarea"
-          rows={6}
-          name="content"
-          value={content}
-          onChange={handleChange}
-          aria-label="content"
-        />
-      </Form.Group>
-      {errors?.content?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))}
-
-
-      <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue}`}
-        onClick={() => history.goBack()}
-      >
-        cancel
-      </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        Save
-      </Button>
-    </div>
-  );
-
   return (
-    <Form onSubmit={handleSubmit}>
-      <Row>
-        <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
-          <Container className={appStyles.Content}>{textFields}</Container>
-        </Col>
-      </Row>
-    </Form>
+    <Container className={styles.Container}>
+      <br />
+      <h2>Create a memo</h2>
+      <br />
+      <Form onSubmit={handleSubmit}>
+        <Form.Group>
+          <Form.Label>Attention of:</Form.Label>
+          <Form.Control
+            type="text"
+            name="attention_of"
+            value={attention_of}
+            onChange={handleChange}
+            aria-label="attention of"
+          />
+        </Form.Group>
+        {errors?.attention_of?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+
+        <Form.Group>
+          <Form.Label>Content:</Form.Label>
+          <Form.Control
+            as="textarea"
+            rows={6}
+            name="content"
+            value={content}
+            onChange={handleChange}
+            aria-label="content"
+          />
+        </Form.Group>
+        {errors?.content?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+
+        <br />
+        <div className="text-center">
+          <Button
+            className={btnStyles.Button}
+            onClick={() => history.goBack()}
+          >
+            cancel
+          </Button>
+          <Button className={btnStyles.Button} type="submit">
+            create
+          </Button>
+        </div>
+
+      </Form>
+    </Container>
   );
 }
 
