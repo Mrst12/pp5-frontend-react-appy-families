@@ -176,3 +176,12 @@ figure {
         top: 95px;
     }
 }
+
+@media screen and (max-width:768px) {
+    .Middle {
+        border-right: 0px;
+    }
+    .RightSide {
+        display: none;
+    }
+}
