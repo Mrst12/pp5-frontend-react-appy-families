@@ -31,14 +31,14 @@ const Profile = (props) => {
                 {currentUser && !is_owner && (
                     following_id ? (
                         <Button
-                            className={`${btnStyles.Button} ${btnStyles.BlackOutline}`}
+                            className={btnStyles.Button}
                             onClick={() => handleUnfollow(profile)}
                         >
                             Watching you!
                         </Button>
                     ) : (
                         <Button
-                            className={`{btnStyles.Button} ${btnStyles.Blue}`}
+                            className={btnStyles.Button}
                             onClick={() => handleFollow(profile)}
                         >
                             Not watching you!
