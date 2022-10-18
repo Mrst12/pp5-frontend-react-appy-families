@@ -1,11 +1,8 @@
-/* Code provided in Moments walkthrough. */
 .Asset {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-height: 50px;
-    margin-bottom: 30px;
 }
 
 p {
