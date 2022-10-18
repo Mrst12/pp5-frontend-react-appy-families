@@ -47,9 +47,8 @@ function AchievementsPostsPage(message) {
   }, [query, pathname]);
 
   return (
-    <Row className="h-100">
-      <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <FamilyProfiles mobile />
+    <Container>
+      <div>
         <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form className={styles.SearchBar}
           onSubmit={(event) => event.preventDefault()}
@@ -63,37 +62,37 @@ function AchievementsPostsPage(message) {
             aria-label="search achievements"
           />
         </Form>
+      </div>
+
+      {hasLoaded ? (
+        <>
+          {achievementPosts.results.length ? (
+            <InfiniteScroll
+              children={
+                achievementPosts.results.map((achievement_post) => (
+                  <Achievements key={achievement_post.id} {...achievement_post} setAchievement={setAchievementPosts} />
+                ))
+              }
+              dataLength={achievementPosts.results.length}
+              loader={<Asset spinner />}
+              hasMore={!!achievementPosts.next}
+              next={() => fetchMoreData(achievementPosts, setAchievementPosts)}
+            />
+
+          ) : (
+            <Container className={appStyles.Content}>
+              <Asset src={NoResults} message={message} />
+            </Container>
+          )}
+        </>
+      ) : (
+        <Container className={appStyles.Content}>
+          <Asset spinner />
+        </Container>
+      )}
+    </Container>
 
 
-        {hasLoaded ? (
-          <>
-            {achievementPosts.results.length ? (
-              <InfiniteScroll
-                children={
-                  achievementPosts.results.map((achievement_post) => (
-                    <Achievements key={achievement_post.id} {...achievement_post} setAchievement={setAchievementPosts} />
-                  ))
-                }
-                dataLength={achievementPosts.results.length}
-                loader={<Asset spinner />}
-                hasMore={!!achievementPosts.next}
-                next={() => fetchMoreData(achievementPosts, setAchievementPosts)}
-              />
-
-            ) : (
-              <Container className={appStyles.Content}>
-                <Asset src={NoResults} message={message} />
-              </Container>
-            )}
-          </>
-        ) : (
-          <Container className={appStyles.Content}>
-            <Asset spinner />
-          </Container>
-        )}
-      </Col>
-
-    </Row>
   );
 }
 
