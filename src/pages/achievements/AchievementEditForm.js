@@ -2,8 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 
 import styles from "../../styles/CreateAchievementForm.module.css";
@@ -102,7 +100,7 @@ function AchievementEditForm() {
                     />
                 </Form.Group>
                 {errors?.title?.map((message, idx) => (
-                    <Alert variant="warning" key="{idx}">
+                    <Alert variant="warning" key={idx}>
                         {message}
                     </Alert>
                 ))}
@@ -118,7 +116,7 @@ function AchievementEditForm() {
                     />
                 </Form.Group>
                 {errors?.content?.map((message, idx) => (
-                    <Alert variant="warning" key="{idx}">
+                    <Alert variant="warning" key={idx}>
                         {message}
                     </Alert>
                 ))}
@@ -142,6 +140,12 @@ function AchievementEditForm() {
                         ref={imageInput}
                     />
                 </Form.Group>
+                {errors?.image?.map((message, idx) => (
+                    <Alert variant="warning" key={idx}>
+                        {message}
+                    </Alert>
+                ))}
+                
                 <div className="text-center">
                     <Button
                         className={btnStyles.Button}
