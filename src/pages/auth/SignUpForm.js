@@ -3,13 +3,11 @@ import { Link, useHistory } from "react-router-dom";
 
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import appStyles from "../../App.module.css";
+
 
 import {
   Form,
   Button,
-  Col,
-  Row,
   Container,
   Alert,
 } from "react-bootstrap";
@@ -89,7 +87,6 @@ const SignUpForm = () => {
         <Form.Group controlId="password2">
           <Form.Label className="d-none">Confirm password</Form.Label>
           <Form.Control
-            className={styles.Input}
             type="password"
             placeholder="Confirm password"
             name="password2"
