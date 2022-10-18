@@ -44,9 +44,8 @@ function TodoPostsPage({ message }) {
     }, [pathname, query]);
 
     return (
-        <Row className="h-100">
-            <Col className="py-2 p-0 p-lg-2" lg={8}>
-                <FamilyProfiles mobile />
+        <Container>
+            <div>
                 <i className={`fas fa-search ${styles.SearchIcon}`} />
                 <Form className={styles.SearchBar}
                     onSubmit={(event) => event.preventDefault()}
@@ -60,33 +59,33 @@ function TodoPostsPage({ message }) {
                         aria-label="search"
                     />
                 </Form>
-                {hasLoaded ? (
-                    <>
-                        {todo.results.length ? (
-                            <InfiniteScroll
-                                children={
-                                    todo.results.map((todo) => (
-                                        <Todo key={todo.id} {...todo} setTodo={setTodo} />
-                                    ))
-                                }
-                                dataLength={todo.results.length}
-                                loader={<Asset spinner />}
-                                hasMore={!!todo.next}
-                                next={() => fetchMoreData(todo, setTodo)}
-                            />
-                        ) : (
-                            <Container className={appStyles.Content}>
-                                <Asset src={NoResults} message={message} />
-                            </Container>
-                        )}
-                    </>
-                ) : (
-                    <Container className={appStyles.Content}>
-                        <Asset spinner />
-                    </Container>
-                )}
-            </Col>
-        </Row>
+            </div>
+            {hasLoaded ? (
+                <>
+                    {todo.results.length ? (
+                        <InfiniteScroll
+                            children={
+                                todo.results.map((todo) => (
+                                    <Todo key={todo.id} {...todo} setTodo={setTodo} />
+                                ))
+                            }
+                            dataLength={todo.results.length}
+                            loader={<Asset spinner />}
+                            hasMore={!!todo.next}
+                            next={() => fetchMoreData(todo, setTodo)}
+                        />
+                    ) : (
+                        <Container className={appStyles.Content}>
+                            <Asset src={NoResults} message={message} />
+                        </Container>
+                    )}
+                </>
+            ) : (
+                <Container className={appStyles.Content}>
+                    <Asset spinner />
+                </Container>
+            )}
+        </Container>
     );
 }
 
