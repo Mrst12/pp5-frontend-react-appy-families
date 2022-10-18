@@ -28,7 +28,7 @@ function MemoPostPage() {
     useEffect(() => {
         const handleMount = async () => {
             try {
-                const [{ data: memoPost }, {data: comments}] = await Promise.all([
+                const [{ data: memoPost }, { data: comments }] = await Promise.all([
                     axiosReq.get(`/memo_posts/${id}`),
                     axiosReq.get(`/comments_memo_posts/?memo_post=${id}`)
                 ])
@@ -46,9 +46,7 @@ function MemoPostPage() {
 
 
     return (
-        <Row className="h-100">
-            <Col className="py-2 p-0 p-lg-2" lg={8}>
-                <p>Popular profiles for mobile</p>
+        <Container>
                 <Memo {...memoPost.results[0]} setMemoPost={setMemoPost} MemoPostPage />
                 <Container className={appStyles.Content}>
                     {currentUser ? (
@@ -83,11 +81,7 @@ function MemoPostPage() {
                         <span>No comments yet...</span>
                     )}
                 </Container>
-            </Col>
-            <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
-                Popular profiles for desktop
-            </Col>
-        </Row>
+        </Container>
     );
 }
 
