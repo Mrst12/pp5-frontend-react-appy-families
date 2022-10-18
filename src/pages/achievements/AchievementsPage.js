@@ -44,25 +44,23 @@ function AchievementsPage() {
 
 
     return (
-        <Row className="h-100">
-            <Col className="py-2 p-0 p-lg-2" lg={8}>
-                <p>Popular profiles for mobile</p>
-                <Achievements {...achievement.results[0]} setAchievement={setAchievement} AchievementsPage />
-                <Container className={appStyles.Content}>
-                    {currentUser ? (
-                        <AchievementsCommentCreateForm
-                            profile_id={currentUser.profile_id}
-                            profileImage={profile_image}
-                            achievement_post={id}
-                            setAchievement={setAchievement}
-                            setAchievementsComments={setAchievementsComments}
-                        />
-                    ) : achievementsComments.results.length ? (
-                        "Comments"
-                    ) : null}
-                    {achievementsComments.results.length ? (
-                        <InfiniteScroll
-                            children={achievementsComments.results.map((achievementsComments) => (
+        <Container>
+            <Achievements {...achievement.results[0]} setAchievement={setAchievement} AchievementsPage />
+            <Container className={appStyles.Content}>
+                {currentUser ? (
+                    <AchievementsCommentCreateForm
+                        profile_id={currentUser.profile_id}
+                        profileImage={profile_image}
+                        achievement_post={id}
+                        setAchievement={setAchievement}
+                        setAchievementsComments={setAchievementsComments}
+                    />
+                ) : achievementsComments.results.length ? (
+                    "Comments"
+                ) : null}
+                {achievementsComments.results.length ? (
+                    <InfiniteScroll
+                        children={achievementsComments.results.map((achievementsComments) => (
                             <AchievementsComment
                                 key={achievementsComments.id}
                                 {...achievementsComments}
@@ -74,19 +72,15 @@ function AchievementsPage() {
                         dataLength={achievementsComments.results.length}
                         loader={<Asset spinner />}
                         hasMore={!!achievementsComments.next}
-                        next={() => fetchMoreData(achievementsComments, setAchievementsComments) }
-                        />
-                    ) : currentUser ? (
-                        <span>No comments yet, be the first to comment!</span>
-                    ) : (
-                        <span>No comments yet....</span>
-                    )}
-                </Container>
-            </Col>
-            <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
-                Popular profiles for desktop
-            </Col>
-        </Row>
+                        next={() => fetchMoreData(achievementsComments, setAchievementsComments)}
+                    />
+                ) : currentUser ? (
+                    <span>No comments yet, be the first to comment!</span>
+                ) : (
+                    <span>No comments yet....</span>
+                )}
+            </Container>
+        </Container >
     );
 }
 
