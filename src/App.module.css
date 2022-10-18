@@ -1,7 +1,6 @@
 .App {
     font-family: 'Montserrat', sans-serif;
-    /*background-color: #d8f6fe;*/
-    min-height: 100vh;
+    /*min-height: 100vh;*/
 }
 
 /*heading*/
@@ -71,11 +70,11 @@
     height: 1000px;
 }
 
-.FillerImage {
+/*.FillerImage {
     object-fit: cover;
     height: 100%;
     width: 100%;
-}
+}*/
 
 .Image {
     max-height: 40vh;
@@ -88,7 +87,7 @@
 }
 
 a {
-    color: #555555;
+    color: #060029;
     transition: color ease-in-out 0.3s;
 }
 
@@ -139,3 +138,5 @@ figure {
 *::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
+
+/*Media queries*/
