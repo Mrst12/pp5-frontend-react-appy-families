@@ -25,3 +25,10 @@
     margin: 0 auto;
     padding: 0px;
 }
+
+/*media queries*/
+@media screen and (max-width: 991px) {
+    .Heading h1 {
+        font-size: 200%;
+    }
+}
