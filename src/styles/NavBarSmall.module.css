@@ -1,12 +1,12 @@
-.Background {
+/*.Background {
     background-color: #c8edf9;
-}
+}*/
 
 .Container {
     width: 100%;
-    background-color: #c8edf9;
+    background-color: #fff;
     margin: 0 auto;
-    border-bottom: #c8edf9;
+    border-bottom: 1px solid #060029;
 }
 
 .Heading {
@@ -18,7 +18,7 @@
     color: #060029;
     text-align: center;
     text-transform: uppercase;
-    font-size: 100%;
+    font-size: 300%;
 }
 
 .Move {
