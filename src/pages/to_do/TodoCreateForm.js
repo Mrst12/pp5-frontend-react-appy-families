@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-
+import Col from "react-bootstrap/Col";
 import styles from "../../styles/TodoCreateEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { useHistory } from "react-router-dom";
@@ -106,35 +106,21 @@ function TodoCreateForm() {
             {message}
           </Alert>
         ))}
-        <Form.Group>
-          <Form.Label>pending:</Form.Label>
+        <Form.Group as={Col}>
+          <Form.Label>Status:</Form.Label>
           <Form.Control
-            type="checkbox"
-            name="status"
-            value={status}
+            as="select"
+            defaultValue="Choose ..."
+            name="status_choices"
             handleChange={handleChange}
             aria-label="status"
-          />
-
-          <Form.Label>started:</Form.Label>
-          <Form.Control
-            type="checkbox"
-            name="status"
-            value={status}
-            handleChange={handleChange}
-            aria-label="status"
-          />
-
-          <Form.Label>done:</Form.Label>
-          <Form.Control
-            type="checkbox"
-            name="status"
-            value={status}
-            handleChange={handleChange}
-            aria-label="status"
-          />
+          >
+            <option value="pending">Pending</option>
+            <option value="started">Started</option>
+            <option value="done">Done</option>
+          </Form.Control>
         </Form.Group>
-        {errors?.status?.map((message, idx) => (
+        {errors?.status_choices?.map((message, idx) => (
           <Alert variant="warning" key={idx}>
             {message}
           </Alert>
