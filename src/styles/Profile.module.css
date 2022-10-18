@@ -1,3 +1,8 @@
-.WordBreak {
-    word-break: break-all;
+.Heading {
+    text-align: center;
+    justify-content: flex-start;
+}
+
+.Heading h2 {
+    text-transform: uppercase;
 }

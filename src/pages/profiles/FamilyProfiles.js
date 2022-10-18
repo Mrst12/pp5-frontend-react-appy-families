@@ -1,38 +1,27 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import appStyles from '../../App.module.css';
+import styles from '../../styles/Profile.module.css';
 import Asset from '../../components/Asset';
 import { useProfileData } from '../../contexts/ProfileDataContext';
 import Profile from './Profile';
 
-const FamilyProfiles = ({ mobile }) => {
+const FamilyProfiles = () => {
     const { popularProfiles } = useProfileData();
 
     return (
-        <Container
-            className={`${appStyles.Content} ${mobile && 'd-lg-none text-center mb-3'
-                }`}
-        >
+        <Container className={styles.Heading}>
             {popularProfiles.results.length ? (
                 <>
-                    <p>Family profiles</p>
-                    {mobile ? (
-                        <div className='d-flex justify-content-around'>
-                            {popularProfiles.results.slice(0, 4).map((profile) => (
-                                <Profile key={profile.id} profile={profile} mobile />
-                            ))}
-                        </div>
-                    ) : (
-                        popularProfiles.results.map((profile) => (
+                    <br />
+                    <h2>Family</h2>
+                    {popularProfiles.results.map((profile) => (
                             <Profile key={profile.id} profile={profile} />
 
-                        ))
+                        ))}
+                    </>
+                    ) : (
+                      <Asset spinner />  
                     )}
-
-                </>
-            ) : (
-                <Asset spinner />
-            )}
         </Container>
     );
 };
