@@ -50,10 +50,12 @@ function MemoCreateForm() {
     }
   }
 
-
-  const textFields = (
-    <div className="text-center">
-      <Form.Group>
+  return (
+    <Container className={styles.Container}>
+      <br />
+      <h2>Create Memo</h2>
+      <br />
+      <Form onSubmit={handleSubmit}><Form.Group>
         <Form.Label>Attention of:</Form.Label>
         <Form.Control
           type="text"
@@ -63,50 +65,44 @@ function MemoCreateForm() {
           aria-label="attention of"
         />
       </Form.Group>
-      {errors?.attention_of?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))}
+        {errors?.attention_of?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
 
-      <Form.Group>
-        <Form.Label>Content:</Form.Label>
-        <Form.Control
-          as="textarea"
-          rows={6}
-          name="content"
-          value={content}
-          onChange={handleChange}
-          aria-label="content"
-        />
-      </Form.Group>
-      {errors?.content?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))}
+        <Form.Group>
+          <Form.Label>Content:</Form.Label>
+          <Form.Control
+            as="textarea"
+            rows={6}
+            name="content"
+            value={content}
+            onChange={handleChange}
+            aria-label="content"
+          />
+        </Form.Group>
+        {errors?.content?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
 
-
-      <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue}`}
-        onClick={() => history.goBack()}
-      >
-        cancel
-      </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        create
-      </Button>
-    </div>
-  );
-
-  return (
-    <Form onSubmit={handleSubmit}>
-      <Row>
-        <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
-          <Container className={appStyles.Content}>{textFields}</Container>
-        </Col>
-      </Row>
-    </Form>
+        <br />
+        <div className="text-center">
+          <Button
+            className={btnStyles.Button}
+            onClick={() => history.goBack()}
+          >
+            cancel
+          </Button>
+          <Button className={btnStyles.Button} type="submit">
+            create
+          </Button>
+        </div>
+      </Form >
+      <br />
+    </Container >
   );
 }
 
