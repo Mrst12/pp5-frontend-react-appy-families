@@ -140,3 +140,39 @@ figure {
 }
 
 /*Media queries*/
+
+@media screen and (max-width:991px) {
+    /*heading*/
+
+    .Heading h1 {
+        font-size: 200%;
+    }
+
+    .HeadingLgScreen {
+        display: none;
+    }
+
+    /*Navbar*/
+
+    .NavLgScreen {
+        display: none;
+    }
+
+    .NavSmScreen{
+        display: block;
+        position: fixed;
+        top: 0px;
+    }
+
+    /*left, middle and right sides*/
+
+    .Middle {
+        position: relative;
+        top: -45px;
+        margin-left: 0;
+    }
+
+    .RightSide {
+        top: 95px;
+    }
+}
