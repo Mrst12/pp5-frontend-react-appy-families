@@ -11,23 +11,22 @@
     2. [Colour Scheme](#colour-scheme)
     3. [Typography](#typography)
 3. [Front End Developer Role](#front-end-developer-role)
-4. [React and React Bootstrap](#react-and-react-bootstrap)
-5. [Features](#features)
-6. [Future features](#future-features)
-7. [Testing](#testing)
-8. [Bugs](#bugs)
+4. [Features](#features)
+5. [Future features](#future-features)
+6. [Testing](#testing)
+7. [Bugs](#bugs)
     1. [Fixed](#fixed)
     2. [Unfixed](#unfixed)
-9. [Technologies used](#technologies-used)
+8. [Technologies used](#technologies-used)
     1. [Languages](#languages)
     2. [Frameworks, libraries, and programmes](#frameworks-libraries-and-programmes)
-10. [Project Setup](#project-setup)
-11. [Components](#components)
-12. [Deployment](#deployment)
+9. [Project Setup](#project-setup)
+10. [Components](#components)
+11. [Deployment](#deployment)
     1. [First deployment](#first-deployment)
     2. [Final deployment](#final-deployment)
-13. [Credits](#credits)
-14. [Acknowledgements](#acknowledgements)
+12. [Credits](#credits)
+13. [Acknowledgements](#acknowledgements)
 
 ## UX
 ### Site Purpose
@@ -64,8 +63,6 @@
 ## Front End Developer Role
 
 Front end developers play an important role in developing an engaging user facing web applications, aiming to make sure the user stays on and returns to the site is a major objective. Front end developers work on the user interface and user experience, maintaining responsiveness and accessibility of the application. Having an understanding of how the backend part of an application works is helpful to a front end developer, as it helps to tie the two together in an approriate manner.
-
-## React and React Bootstrap
 
 ## Features
 
