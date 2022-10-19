@@ -8,7 +8,7 @@ import Container from "react-bootstrap/Container";
 import AchievementsCommentCreateForm from "../comments/AchievementsCommentCreateForm";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
-import appStyles from "../../App.module.css";
+import styles from "../../styles/AchievementsPosts.module.css";
 import { useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import Achievements from "./Achievements";
@@ -46,7 +46,7 @@ function AchievementsPage() {
     return (
         <Container>
             <Achievements {...achievement.results[0]} setAchievement={setAchievement} AchievementsPage />
-            <Container className={appStyles.Content}>
+            <Container className={styles.Content}>
                 {currentUser ? (
                     <AchievementsCommentCreateForm
                         profile_id={currentUser.profile_id}
