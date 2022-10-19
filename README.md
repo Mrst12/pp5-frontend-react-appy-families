@@ -82,6 +82,11 @@ Front end developers play an important role in developing an engaging user facin
 
 ## Bugs
 ### Fixed
+
+- The likes on the achievements page were not being recorded, the number was going up continuously, but a like was not being sent to the API. Fixed by changing the id from achievements to achievement_post in achievements.js for the *post* request.
+
+- The dropdown menu was not rendering on achievements page, with the help of *Ed* from tutor support, it was fixed via changing the prop name from AchievementsPage to setAchievement. The dropdown then rendered as intended.
+
 ### Unfixed
 
 ## Technologies used
