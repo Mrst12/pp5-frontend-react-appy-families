@@ -5,6 +5,8 @@
 - Deployed API Heroku [link](https://appy-families-drf-api.herokuapp.com/)
 - Deployed Frontend Heroku [link](https://appy-families.herokuapp.com/)
 - API backend [repository](https://github.com/Mrst12/pp5-backend-drf-appy-families)
+- [Development board](https://github.com/users/Mrst12/projects/7)
+- [User Story board](https://github.com/users/Mrst12/projects/8)
 
 # Table Of Contents
 
