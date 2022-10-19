@@ -1,5 +1,11 @@
 # Appy Families (front end)
 
+## Links
+
+- Deployed API Heroku [link](https://appy-families-drf-api.herokuapp.com/)
+- Deployed Frontend Heroku [link](https://appy-families.herokuapp.com/)
+- API backend [repository](https://github.com/Mrst12/pp5-backend-drf-appy-families)
+
 # Table Of Contents
 
 1. [UX](#ux)
