@@ -47,15 +47,15 @@
 [wireframes for project](./documents/wireframes/appy-families-wireframes.pdf)
 ### Colour Scheme
 
-- The following colour scheme was chosen at the start of the project, I tried to go for light neutral colours as I aim for both male and females to use the site.
+- The following colour scheme was chosen at the start of the project, I tried to go for light neutral colours as I aim for both male and females to use the site. The sitw will be mainly white with the colours chosen for buttons, icons and text.
 
 ![colour scheme for site](./documents/design/p5-colours.png)
 
 ### Typography
 
-- In the planning stages of the project, I chose *bungee spice* for the heading
+- In the planning stages of the project, I chose *bungee spice* for the heading. As the project started I changed my mind and went for *bungee* for the heading instead.
 
-![Heading font](./documents/design/typography-bungee-spice-reg-400.png)
+![Heading font](./documents/design/font-p5.png)
 
 - For the remainder of text throughout the site, I googled the best pairing for the heading, which came up with *Monserrat*.
 
