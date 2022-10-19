@@ -141,6 +141,24 @@ npm start
 
 ## Components
 
+- Several components were setup throughout the project and was reused throughout.
+1. MoreDropdown.js
+    - added a dropdown menu for memo's, achievements, todo and profile, to allow users to edit and delete their own content.
+2. AxiosDefault.js
+    - helped with communication with the backend API
+3. Asset.js
+    - was used for the loading spinner throughout the site.
+4. Avatar.js
+    - used for the users avatar throughout the site.
+5. CurrentUserContext.js
+    - confirm users logged-in status to determine what functionality is available to that user.
+6. ProfileDataContext.js
+    - used for watching and unwatching users
+7. useRedirect.js
+    - redirects a user to another page if not authorised to access the page they are trying to access.
+8. utils.js
+    - supplies functionality to all of the components that utilise the Infinite Scroll.
+
 ## Deployment
 ### First deployment
 
