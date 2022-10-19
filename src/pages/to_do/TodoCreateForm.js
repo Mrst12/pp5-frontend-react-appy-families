@@ -108,9 +108,10 @@ function TodoCreateForm() {
           <Form.Label>Status:</Form.Label>
           <Form.Control
             as="select"
-            defaultValue="Choose ..."
+            defaultValue="pending"
+            value={status}
             name="status_choices"
-            handleChange={handleChange}
+            onChange={handleChange}
             aria-label="status"
           >
             <option value="pending">Pending</option>

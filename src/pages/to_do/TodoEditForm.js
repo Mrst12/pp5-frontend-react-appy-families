@@ -124,7 +124,7 @@ function TodoEditForm() {
                     <Form.Control
                         as="select"
                         name="status_choices"
-                        handleChange={handleChange}
+                        onChange={handleChange}
                         aria-label="status"
                     >
                         <option value="pending">Pending</option>
