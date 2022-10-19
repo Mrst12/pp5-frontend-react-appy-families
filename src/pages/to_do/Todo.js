@@ -18,7 +18,6 @@ const Todo = (props) => {
         due_date,
         content,
         status,
-        urgent,
         setTodo,
     } = props;
 
@@ -64,7 +63,6 @@ const Todo = (props) => {
                     {due_date && <>Due date:<Card.Text>{due_date}</Card.Text></>}
                     {content && <>Task: <Card.Text>{content}</Card.Text></>}
                     {status && <>Status: <Card.Text>{status}</Card.Text></>}
-                    {urgent && <>Urgent:<Card.Text>{urgent}</Card.Text></>}
                 </Card.Body>
             </Link>
         </Card>

@@ -19,9 +19,8 @@ function TodoEditForm() {
         due_date: "",
         content: "",
         status: "",
-        urgent: "",
     });
-    const { task_title, due_date, content, status, urgent } = todoData;
+    const { task_title, due_date, content, status } = todoData;
 
     const history = useHistory();
     const { id } = useParams();
@@ -30,9 +29,9 @@ function TodoEditForm() {
         const handleMount = async () => {
             try {
                 const { data } = await axiosReq.get(`/to_do/${id}`);
-                const { task_title, content, is_owner, due_date, status, urgent } = data;
+                const { task_title, content, is_owner, due_date, status } = data;
 
-                is_owner ? setTodoData({ task_title, content, due_date, status, urgent }) : history.push('/');
+                is_owner ? setTodoData({ task_title, content, due_date, status }) : history.push('/');
             } catch (err) {
                 console.log(err);
             }
@@ -56,7 +55,6 @@ function TodoEditForm() {
         formData.append('due_date', due_date)
         formData.append('content', content)
         formData.append('status', status)
-        formData.append('urgent', urgent)
 
         try {
             await axiosReq.put(`/to_do/${id}/`, formData);
@@ -139,22 +137,6 @@ function TodoEditForm() {
                         {message}
                     </Alert>
                 ))}
-                <Form.Group>
-                    <Form.Label>Urgent</Form.Label>
-                    <Form.Control
-                        type="checkbox"
-                        name="urgent"
-                        value={urgent}
-                        handleChange={handleChange}
-                        aria-label="is it urgent"
-                    />
-                </Form.Group>
-                {errors?.urgent?.map((message, idx) => (
-                    <Alert variant="warning" key={idx}>
-                        {message}
-                    </Alert>
-                ))}
-
                 <br />
                 <div className="text-center">
                     <Button

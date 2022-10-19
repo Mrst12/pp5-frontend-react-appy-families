@@ -20,9 +20,8 @@ function TodoCreateForm() {
     due_date: "",
     content: "",
     status: "",
-    urgent: "",
   });
-  const { task_title, due_date, content, status, urgent } = todoData;
+  const { task_title, due_date, content, status } = todoData;
 
   const history = useHistory();
 
@@ -41,7 +40,6 @@ function TodoCreateForm() {
     formData.append('due_date', due_date)
     formData.append('content', content)
     formData.append('status', status)
-    formData.append('urgent', urgent)
 
     try {
       const { data } = await axiosReq.post('/to_do/', formData);
@@ -121,21 +119,6 @@ function TodoCreateForm() {
           </Form.Control>
         </Form.Group>
         {errors?.status_choices?.map((message, idx) => (
-          <Alert variant="warning" key={idx}>
-            {message}
-          </Alert>
-        ))}
-        <Form.Group>
-          <Form.Label>Urgent</Form.Label>
-          <Form.Control
-            type="checkbox"
-            name="urgent"
-            value={urgent}
-            handleChange={handleChange}
-            aria-label="is it urgent"
-          />
-        </Form.Group>
-        {errors?.urgent?.map((message, idx) => (
           <Alert variant="warning" key={idx}>
             {message}
           </Alert>
