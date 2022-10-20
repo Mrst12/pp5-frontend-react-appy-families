@@ -25,6 +25,7 @@ import TodoEditForm from './pages/to_do/TodoEditForm';
 import About from './pages/About';
 import { Col, Row } from 'react-bootstrap';
 import FamilyProfiles from './pages/profiles/FamilyProfiles';
+import NotFound from './components/NotFound';
 
 
 function App() {
@@ -92,7 +93,7 @@ function App() {
             <Route exact path="/todo/create" render={() => <TodoCreateForm />} />
             <Route exact path="/to_do/:id" render={() => <TodoPostPage />} />
             <Route exact path="/to_do/:id/edit" render={() => <TodoEditForm />} />
-            <Route render={() => <p>Page not found!</p>} />
+            <Route render={() => <NotFound />} />
           </Switch>
         </Col>
 
