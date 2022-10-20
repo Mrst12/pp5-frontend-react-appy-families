@@ -13,6 +13,13 @@
     6. [User experience](#user-experience)
 
 ### Manual
+
+- Manual testing were carried out for the URL paths, search functionality and **CRUD** functionality, all were made into tables and checked off.
+
+### URL Path tests
+
+![URL path tests development](./documents/testing/front-dev-url-test.png)
+
 ### Validation
 ### Lighthouse
 ### User Stories
