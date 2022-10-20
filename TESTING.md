@@ -89,12 +89,39 @@ The same table was used for checks in deployed application all checks working.
 #### Memo page
 
 - As a user I can create a memo so that it can be viewed on the memo page
+    - A create memo page is available to create memos which is then displayed on the memo page.
+
+![create memo page](./documents/testing/p5-create-memo.png)
+
 - As a memo owner I can update my memo so that I can change the message as necessary after creation
+    - There is a form available to edit memo through the dropdown menu(only visible to owner), the form is prefilled with the data.
+
+![edit memo form](./documents/testing/memo-edit.png)
+
 - As a memo owner I can delete my memo so that I can control the removal of the memo from the site
+    - There is a dropdown menu for owner users to delete their memo.
+
+![delete memo](./documents/testing/delete-memo.png)
+
 - As a user I can search memo posts by profile name, content or who it is for so that I don't have to look through every memo
+    - A search bar is on the memo page.
+
+![search bar](./documents/testing/search.png)
+
 - As a user I can like a memo so that other users can see my interaction with their memos
+    - Users can like other users memoposts if they are logged in, but cannot like their own.
+
+![like a memo](./documents/testing/like.png)
+
 - As a user I can comment on memo posts so that I can interact with the site
+    - Logged in users can comment on memo posts.
+
+![Comment memo posts](./documents/testing/comment.png)
+
 - As a user I can view memos so that I can see everything that is going on within my family
+    - Anyone can see all the memo's that have been created 
+
+![memo-posts](./documents/testing/memo-posts.png)
 
 #### Todo page
 
