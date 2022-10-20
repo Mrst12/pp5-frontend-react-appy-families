@@ -47,7 +47,7 @@ const NavBar = () => {
                 Create an Achievement
             </NavLink>
             <NavLink
-                to='/todo/create'
+                to='/to_do/create'
                 className={styles.NavLink}
                 activeClassName={styles.Active}
                 aria-label='create a todo item'
@@ -149,7 +149,7 @@ const NavBar = () => {
                                 Achievements
                             </NavLink>
                             <NavLink
-                                to="/todo"
+                                to="/to_do"
                                 className={styles.NavLink}
                                 activeClassName={styles.Active}
                                 aria-label='todo page'

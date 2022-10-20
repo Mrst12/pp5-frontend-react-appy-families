@@ -65,7 +65,7 @@ function App() {
             />
             <Route
               exact
-              path="/todo"
+              path="/to_do"
               render={() => (
                 <TodoPostsPage message="No results found. Adjust the search keyword" />
               )}
