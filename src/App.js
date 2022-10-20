@@ -90,7 +90,7 @@ function App() {
             <Route exact path="/profiles/:id/edit" render={() => <ProfileEditForm />} />
             <Route exact path="/memo_posts/:id" render={() => <MemoPostPage />} />
             <Route exact path="/memo_posts/:id/edit" render={() => <MemoEditForm />} />
-            <Route exact path="/todo/create" render={() => <TodoCreateForm />} />
+            <Route exact path="/to_do/create" render={() => <TodoCreateForm />} />
             <Route exact path="/to_do/:id" render={() => <TodoPostPage />} />
             <Route exact path="/to_do/:id/edit" render={() => <TodoEditForm />} />
             <Route render={() => <NotFound />} />
