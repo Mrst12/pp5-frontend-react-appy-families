@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 
@@ -66,22 +65,17 @@ function AchievementCreateForm() {
       }
     }
   }
-
-  const textFields = (
-    <div className="text-center">
-
-
-      <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue}`}
-        onClick={() => history.goBack()}
-      >
-        cancel
-      </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        create
-      </Button>
-    </div>
-  );
+  <div className="text-center">
+    <Button
+      className={`${btnStyles.Button} ${btnStyles.Blue}`}
+      onClick={() => history.goBack()}
+    >
+      cancel
+    </Button>
+    <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+      create
+    </Button>
+  </div>
 
   return (
     <Container className={styles.Container}>

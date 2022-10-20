@@ -1,8 +1,5 @@
 //single achievement page
 import React, { useEffect, useState } from "react";
-
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 
 import AchievementsCommentCreateForm from "../comments/AchievementsCommentCreateForm";

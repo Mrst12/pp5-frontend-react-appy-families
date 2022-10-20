@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
 import styles from '../../styles/Profile.module.css';
 import Asset from '../../components/Asset';
 import { useProfileData } from '../../contexts/ProfileDataContext';
