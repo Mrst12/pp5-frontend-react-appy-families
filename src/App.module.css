@@ -49,6 +49,9 @@
 .MainContent {
     position: relative;
     top: 150px;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 20px;
 }
 
 .LeftSide {
@@ -169,7 +172,6 @@ figure {
     .Middle {
         position: relative;
         top: -45px;
-        margin-left: 0;
     }
 
     .RightSide {

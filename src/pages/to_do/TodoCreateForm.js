@@ -109,7 +109,6 @@ function TodoCreateForm() {
           <Form.Control
             as="select"
             defaultValue="pending"
-            value={status}
             name="status_choices"
             onChange={handleChange}
             aria-label="status"
