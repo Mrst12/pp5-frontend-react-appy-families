@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import Col from "react-bootstrap/Col";
 import styles from "../../styles/TodoCreateEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { useHistory } from "react-router-dom";
@@ -19,9 +18,8 @@ function TodoCreateForm() {
     task_title: "",
     due_date: "",
     content: "",
-    status: "",
   });
-  const { task_title, due_date, content, status } = todoData;
+  const { task_title, due_date, content } = todoData;
 
   const history = useHistory();
 
@@ -39,7 +37,7 @@ function TodoCreateForm() {
     formData.append('task_title', task_title)
     formData.append('due_date', due_date)
     formData.append('content', content)
-    formData.append('status', status)
+
 
     try {
       const { data } = await axiosReq.post('/to_do/', formData);
@@ -104,26 +102,6 @@ function TodoCreateForm() {
             {message}
           </Alert>
         ))}
-        <Form.Group as={Col}>
-          <Form.Label>Status:</Form.Label>
-          <Form.Control
-            as="select"
-            defaultValue="pending"
-            name="status_choices"
-            onChange={handleChange}
-            aria-label="status"
-          >
-            <option value="pending">Pending</option>
-            <option value="started">Started</option>
-            <option value="done">Done</option>
-          </Form.Control>
-        </Form.Group>
-        {errors?.status_choices?.map((message, idx) => (
-          <Alert variant="warning" key={idx}>
-            {message}
-          </Alert>
-        ))}
-
         <br />
         <div className="text-center">
           <Button

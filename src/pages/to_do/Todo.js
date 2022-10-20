@@ -18,7 +18,6 @@ const Todo = (props) => {
         created_on,
         due_date,
         content,
-        status,
         setTodo,
     } = props;
 
@@ -63,7 +62,6 @@ const Todo = (props) => {
                     {task_title && <>Task title:<Card.Title className='text_center'>{task_title}</Card.Title></>}
                     {due_date && <>Due date:<Card.Text>{due_date}</Card.Text></>}
                     {content && <>Task: <Card.Text>{content}</Card.Text></>}
-                    {status && <>Status: <Card.Text>{status}</Card.Text></>}
                 </Card.Body>
             </Link>
         </Card>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
@@ -18,9 +17,8 @@ function TodoEditForm() {
         task_title: "",
         due_date: "",
         content: "",
-        status: "",
     });
-    const { task_title, due_date, content, status } = todoData;
+    const { task_title, due_date, content } = todoData;
 
     const history = useHistory();
     const { id } = useParams();
@@ -29,9 +27,9 @@ function TodoEditForm() {
         const handleMount = async () => {
             try {
                 const { data } = await axiosReq.get(`/to_do/${id}`);
-                const { task_title, content, is_owner, due_date, status } = data;
+                const { task_title, content, is_owner, due_date } = data;
 
-                is_owner ? setTodoData({ task_title, content, due_date, status }) : history.push('/');
+                is_owner ? setTodoData({ task_title, content, due_date }) : history.push('/');
             } catch (err) {
                 console.log(err);
             }
@@ -54,7 +52,6 @@ function TodoEditForm() {
         formData.append('task_title', task_title)
         formData.append('due_date', due_date)
         formData.append('content', content)
-        formData.append('status', status)
 
         try {
             await axiosReq.put(`/to_do/${id}/`, formData);
@@ -115,24 +112,6 @@ function TodoEditForm() {
                     />
                 </Form.Group>
                 {errors?.content?.map((message, idx) => (
-                    <Alert variant="warning" key={idx}>
-                        {message}
-                    </Alert>
-                ))}
-                <Form.Group as={Col}>
-                    <Form.Label>Status:</Form.Label>
-                    <Form.Control
-                        as="select"
-                        name="status_choices"
-                        onChange={handleChange}
-                        aria-label="status"
-                    >
-                        <option value="pending">Pending</option>
-                        <option value="started">Started</option>
-                        <option value="done">Done</option>
-                    </Form.Control>
-                </Form.Group>
-                {errors?.status_choices?.map((message, idx) => (
                     <Alert variant="warning" key={idx}>
                         {message}
                     </Alert>
