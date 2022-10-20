@@ -24,6 +24,16 @@
 
 ![search table for development](./documents/testing/search-dev-test.png)
 
+### CRUD Testing
+- Table was made to check a user could **C**reate, **R**ead, **U**pdate, or **D**elete items.
+- The table for deployed was testing in the back link to the front end [here](https://github.com/Mrst12/pp5-backend-drf-appy-families/blob/main/TESTING.md)
+- I used a key in the table 
+    - LI meaning the user was logged in, and so could Create, and read.
+    - LO meaning the user was not logged in and so could only read.
+    - LI/O meaning the user was logged in **and** the owner so had full CRUD functionality.
+
+![CRUD testing development](./documents/testing/front-crud-test-dev.png)
+
 ### Validation
 ### Lighthouse
 ### User Stories
