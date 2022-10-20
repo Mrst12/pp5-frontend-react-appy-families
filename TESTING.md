@@ -45,13 +45,46 @@ The same table was used for checks in deployed application all checks working.
 #### Navigation and authentication
 
 - As a User I can access a navigation menu so that I can easily get between pages
+    - A navigation menu for small and larger screens were added.
+    - Smaller screens
+
+![small navbar](./documents/testing/small-navbar.png)
+
+    - larger screens
+
+![navbar](./documents/testing/p5-navbar.png)
+
 - As a user I can navigate through pages quickly so that I can view content without having to refresh the page
+    - The navigational bar is visible on small screens via the burger menu, and at the side on larger screens, infinite scroll has been put on pages for posts and comments so the user doesn't have to refresh the page.
+
 - As a user I can register for an account so that I can access all content
+    - A signup form is available to users to register for the full functionality of the site.
+
+![signup form](./documents/testing/p5-signup.png)
+
 - As a user I can log in to the site so that I can access all content for a logged in user
+
+    - A login form is required to access full functionality
+
+![login form](./documents/testing/p5-login.png)
+
 - As a user I can see if I am logged in or logged out so that I can log in or out as needed
+    - As a logged in user the profile picture shows on the side navigation bar, and in the family bar it doesn't have a watching/notwatching button. A logged in user can access the create functions on the side navigation bar unlike a logged out user.
+
+![signed in navbar](./documents/testing/signedin-user.png)
+
 - As a user I can maintain my logged in status until I choose to log out so that my user experience is not compromised
+    - Refresh tokens have been set within the site so a user can remain logged in.
+
 - As a logged out user I can see sign in or register options so that I can sign in or register
+    - These options are on the logged out user navbar
+
+![logged out navbar](./documents/testing/logged-out.png)
+
 - As a user I can view other users avatars so that I can easily identify users of the site
+    - The family is displayed on the right of the site with their avatar pictures once they have added them to their profiles. They are also on each post which links to that users profile page
+
+![profile avatars](./documents/testing/profile-avatar.png)
 
 #### Memo page
 
