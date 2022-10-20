@@ -12,6 +12,7 @@ import NoResults from "../../assets/no-results.png";
 import Asset from "../../components/Asset";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 
 function MemoPostsPage({ message }) {
@@ -20,6 +21,7 @@ function MemoPostsPage({ message }) {
     const { pathname } = useLocation();
 
     const [query, setQuery] = useState("");
+    const currentUser = useCurrentUser();
 
     useEffect(() => {
         const fetchMemoPosts = async () => {
@@ -39,7 +41,7 @@ function MemoPostsPage({ message }) {
         return () => {
             clearTimeout(timer);
         };
-    }, [query, pathname]);
+    }, [query, pathname, currentUser]);
 
     return (
         <Container>

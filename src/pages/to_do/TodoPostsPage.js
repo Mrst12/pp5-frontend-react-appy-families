@@ -10,6 +10,7 @@ import NoResults from "../../assets/no-results.png";
 import Asset from "../../components/Asset";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 
 function TodoPostsPage({ message }) {
@@ -18,6 +19,7 @@ function TodoPostsPage({ message }) {
     const { pathname } = useLocation();
 
     const [query, setQuery] = useState("");
+    const currentUser = useCurrentUser();
 
     useEffect(() => {
         const fetchTodoPosts = async () => {
@@ -37,7 +39,7 @@ function TodoPostsPage({ message }) {
         return () => {
             clearTimeout(timer);
         };
-    }, [pathname, query]);
+    }, [pathname, query, currentUser]);
 
     return (
         <Container>
