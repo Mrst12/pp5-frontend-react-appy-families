@@ -19,6 +19,7 @@
 ### URL Path tests
 
 ![URL path tests development](./documents/testing/front-dev-url-test.png)
+![URL path tests deployed](./documents/testing/front-deployed-url-tests.png)
 
 ### Search testing
 
