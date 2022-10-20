@@ -32,7 +32,7 @@ function AchievementsPage() {
                 setAchievement({ results: [achievement] });
                 setAchievementsComments(achievementsComments);
             } catch (err) {
-                console.log(err)
+                //console.log(err)
             }
         };
 

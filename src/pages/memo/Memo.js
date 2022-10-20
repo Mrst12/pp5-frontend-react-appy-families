@@ -38,7 +38,7 @@ const Memo = (props) => {
             await axiosRes.delete(`/memo_posts/${id}/`);
             history.goBack();
         } catch (err) {
-            console.log(err);
+            //console.log(err);
         }
     };
 
@@ -54,7 +54,7 @@ const Memo = (props) => {
                 }),
             }));
         } catch (err) {
-            console.log(err)
+            //console.log(err)
         }
     };
 
@@ -70,7 +70,7 @@ const Memo = (props) => {
                 }),
             }));
         } catch (err) {
-            console.log(err);
+            //console.log(err);
         }
     }
 

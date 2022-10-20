@@ -32,10 +32,8 @@ function MemoPostPage() {
                 ])
                 setMemoPost({ results: [memoPost] });
                 setComments(comments);
-                console.log(memoPost);
-                console.log(comments);
             } catch (err) {
-                console.log(err);
+                // console.log(err);
             }
         }
 
@@ -45,22 +43,22 @@ function MemoPostPage() {
 
     return (
         <Container>
-                <Memo {...memoPost.results[0]} setMemoPost={setMemoPost} MemoPostPage />
-                <Container className={styles.Content}>
-                    {currentUser ? (
-                        <MemoCommentCreateForm
-                            profile_id={currentUser.profile_id}
-                            profileImage={profile_image}
-                            memo_post={id}
-                            setMemoPost={setMemoPost}
-                            setComments={setComments}
-                        />
-                    ) : comments.results.length ? (
-                        "Comments"
-                    ) : null}
-                    {comments.results.length ? (
-                        <InfiniteScroll
-                            children={comments.results.map((comments) => (
+            <Memo {...memoPost.results[0]} setMemoPost={setMemoPost} MemoPostPage />
+            <Container className={styles.Content}>
+                {currentUser ? (
+                    <MemoCommentCreateForm
+                        profile_id={currentUser.profile_id}
+                        profileImage={profile_image}
+                        memo_post={id}
+                        setMemoPost={setMemoPost}
+                        setComments={setComments}
+                    />
+                ) : comments.results.length ? (
+                    "Comments"
+                ) : null}
+                {comments.results.length ? (
+                    <InfiniteScroll
+                        children={comments.results.map((comments) => (
                             <MemoComment
                                 key={comments.id}
                                 {...comments}
@@ -72,13 +70,13 @@ function MemoPostPage() {
                         loader={<Asset spinner />}
                         hasMore={!!comments.next}
                         next={() => fetchMoreData(comments, setComments)}
-                        />
-                    ) : currentUser ? (
-                        <span>No comments yet, be the first to comment!</span>
-                    ) : (
-                        <span>No comments yet...</span>
-                    )}
-                </Container>
+                    />
+                ) : currentUser ? (
+                    <span>No comments yet, be the first to comment!</span>
+                ) : (
+                    <span>No comments yet...</span>
+                )}
+            </Container>
         </Container>
     );
 }

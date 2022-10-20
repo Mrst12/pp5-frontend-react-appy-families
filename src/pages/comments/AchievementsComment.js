@@ -40,7 +40,7 @@ const AchievementsComment = (props) => {
                 results: prevAchievementsComment.results.filter((achievementsComments) => achievementsComments.id !== id),
             }))
         } catch (err) {
-            console.log(err);
+            //console.log(err);
 
         }
     }

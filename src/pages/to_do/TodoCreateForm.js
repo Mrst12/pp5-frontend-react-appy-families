@@ -43,7 +43,7 @@ function TodoCreateForm() {
       const { data } = await axiosReq.post('/to_do/', formData);
       history.push(`/to_do/${data.id}`)
     } catch (err) {
-      console.log(err);
+      //console.log(err);
       if (err.response?.status !== 401) {
         setErrors(err.response?.data)
       }

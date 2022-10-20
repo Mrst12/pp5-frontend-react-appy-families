@@ -31,7 +31,7 @@ function TodoEditForm() {
 
                 is_owner ? setTodoData({ task_title, content, due_date }) : history.push('/');
             } catch (err) {
-                console.log(err);
+               // console.log(err);
             }
         };
 
@@ -57,7 +57,7 @@ function TodoEditForm() {
             await axiosReq.put(`/to_do/${id}/`, formData);
             history.push(`/to_do/${id}`);
         } catch (err) {
-            console.log(err);
+           // console.log(err);
             if (err.response?.status !== 401) {
                 setErrors(err.response?.data)
             }

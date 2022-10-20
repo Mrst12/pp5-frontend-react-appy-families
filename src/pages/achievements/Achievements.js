@@ -23,7 +23,6 @@ const Achievements = (props) => {
         content,
         image,
         date_created,
-        // AchievementsPage,
         setAchievement,
     } = props;
 
@@ -40,7 +39,7 @@ const Achievements = (props) => {
             await axiosRes.delete(`/achievements/${id}/`);
             history.push('/achievements/');
         } catch (err) {
-            console.log(err);
+            //console.log(err);
         }
     };
 
@@ -56,7 +55,7 @@ const Achievements = (props) => {
                 }),
             }));
         } catch (err) {
-            console.log(err);
+           // console.log(err);
         }
     };
 
@@ -72,7 +71,7 @@ const Achievements = (props) => {
                 }),
             }));
         } catch (err) {
-            console.log(err);
+            //console.log(err);
         }
     }
 

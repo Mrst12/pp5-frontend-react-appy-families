@@ -1,6 +1,5 @@
 .App {
     font-family: 'Montserrat', sans-serif;
-    /*min-height: 100vh;*/
 }
 
 /*heading*/
@@ -72,12 +71,6 @@
     border-left: 1px solid #060029;
     height: 1000px;
 }
-
-/*.FillerImage {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-}*/
 
 .Image {
     max-height: 40vh;

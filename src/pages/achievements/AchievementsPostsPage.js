@@ -30,7 +30,7 @@ function AchievementsPostsPage(message) {
         setAchievementPosts(data);
         setHasLoaded(true);
       } catch (err) {
-        console.log(err);
+        //console.log(err);
       }
     };
 

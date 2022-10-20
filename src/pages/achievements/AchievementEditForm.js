@@ -35,7 +35,7 @@ function AchievementEditForm() {
 
                 is_owner ? setAchievementData({ title, content, image }) : history.push('/');
             } catch (err) {
-                console.log(err);
+                //console.log(err);
             }
         };
 
@@ -74,7 +74,7 @@ function AchievementEditForm() {
             await axiosReq.put(`/achievements/${id}/`, formData);
             history.push(`/achievements/${id}`);
         } catch (err) {
-            console.log(err)
+            //console.log(err)
             if (err.response?.status !== 401) {
                 setErrors(err.response?.data)
             }

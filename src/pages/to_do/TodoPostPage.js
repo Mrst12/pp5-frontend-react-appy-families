@@ -17,7 +17,7 @@ function TodoPostPage() {
         setTodo({ results: [todo] });
         console.log(todo);
       } catch (err) {
-        console.log(err);
+       // console.log(err);
       }
     };
 

@@ -31,7 +31,7 @@ function MemoEditForm() {
 
         is_owner ? setMemoData({ attention_of, content }) : history.push('/');
       } catch (err) {
-        console.log(err);
+       // console.log(err);
       }
     };
 
