@@ -22,7 +22,7 @@
 ![URL path tests deployed](./documents/testing/front-deployed-url-tests.png)
 
 ### Search testing
-
+- The same table was used for development and deployment everything working as expected.
 ![search table for development](./documents/testing/search-dev-test.png)
 
 ### CRUD Testing
@@ -34,9 +34,13 @@
     - LI/O meaning the user was logged in **and** the owner so had full CRUD functionality.
 
 ![CRUD testing development](./documents/testing/front-crud-test-dev.png)
-
+The same table was used for checks in deployed application all checks working.
 ### Validation
 ### Lighthouse
+
+- Lighthouse scores
+
+![Lighthouse](./documents/testing/p5-lighthouse.png)
 ### User Stories
 #### Navigation and authentication
 
