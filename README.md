@@ -163,7 +163,17 @@ Front end developers play an important role in developing an engaging user facin
 
 ![update profile](./documents/testing/profile-update.png)
 
+- The profle page has a button at the top to watch or not watch a user the statistics of how many are watching and how many a user watches are in the profile page, this can also be accessed from the side family bar.
+
+![watch button](./documents/features/watch-button.png)
+
+![family bar](./documents/features/family.png)
+
 ### About page
+- Before a user logs in or registers there is an about page on the navigational bar which allows the user wether to register for the site.
+
+![about page](./documents/testing/about-page.png)
+
 ### Registration
 ### Not Found page
 
