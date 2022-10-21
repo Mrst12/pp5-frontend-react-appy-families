@@ -175,6 +175,13 @@ Front end developers play an important role in developing an engaging user facin
 ![about page](./documents/testing/about-page.png)
 
 ### Registration
+- A user can register for full functionality of the site rather than just read, the posts they can like, comment, create, edit and update things as an owner, they cannot however like their own posts.
+The register form once completed takes the user stright to the signin page which then redirects to the site.
+
+![register](./documents/testing/p5-signup.png)
+
+![login](./documents/testing/p5-login.png)
+
 ### Not Found page
 
 
