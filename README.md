@@ -184,6 +184,16 @@ npm start
 
 ### Final deployment
 
+1. Ensure all finalised code is committed and pushed to Github
+
+2. Log into Heroku in the dashboard for your front end React project select **Deploy** from the top bar
+
+3. Select **Deploy branch** and wait for build to complete
+
+4. If successfully built you will see a message *deployed to heroku* click the **open app** button.
+
+5. Test your deployed version matches development version.
+
 ## Credits
 
 ## Acknowledgements
