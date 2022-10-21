@@ -128,7 +128,7 @@ Front end developers play an important role in developing an engaging user facin
 
 ![all posts](./documents/features/achievements-all.png)
 
-- Ther is a dropdown menu which allows owner users to edit or delete their achievements, the edit button takes the user to a edit achievement form which is prefilled.
+- There is a dropdown menu which allows owner users to edit or delete their achievements, the edit button takes the user to a edit achievement form which is prefilled.
 
 ![edit achievement](./documents/testing/edit-achievement1.png)
 
@@ -176,14 +176,14 @@ Front end developers play an important role in developing an engaging user facin
 
 ### Registration
 - A user can register for full functionality of the site rather than just read, the posts they can like, comment, create, edit and update things as an owner, they cannot however like their own posts.
-The register form once completed takes the user stright to the signin page which then redirects to the site.
+The register form once completed takes the user straight to the signin page which then redirects to the site.
 
 ![register](./documents/testing/p5-signup.png)
 
 ![login](./documents/testing/p5-login.png)
 
 ### Not Found page
-- If a user comesto a page that doesnt exist it will display a page saying its not found, the navigational bar is still present to take them wherever they want to go.
+- If a user comes to a page that doesnt exist it will display a page saying its not found, the navigational bar is still present to take them wherever they want to go.
 
 ![not found page](./documents/features/not-found.png)
 
