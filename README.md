@@ -22,6 +22,14 @@
     3. [Typography](#typography)
 3. [Front End Developer Role](#front-end-developer-role)
 4. [Features](#features)
+    1. [Navigation bar](#navigation-bar)
+    2. [Memo page](#memo-page)
+    3. [Achievements Page](#achievements-page)
+    4. [Todo List](#todo-list)
+    5. [Profile page](#profile-page)
+    6. [About page](#about-page)
+    7. [Registration](#registration)
+    8. [Not Found page](#not-found-page)
 5. [Future features](#future-features)
 6. [Testing](#testing)
 7. [Bugs](#bugs)
@@ -75,6 +83,15 @@
 Front end developers play an important role in developing an engaging user facing web applications, aiming to make sure the user stays on and returns to the site is a major objective. Front end developers work on the user interface and user experience, maintaining responsiveness and accessibility of the application. Having an understanding of how the backend part of an application works is helpful to a front end developer, as it helps to tie the two together in an approriate manner.
 
 ## Features
+### Navigation bar
+### Memo page
+### Achievements Page
+### Todo List
+### Profile page
+### About page
+### Registration
+### Not Found page
+
 
 ## Future features
 - In the future I would like to implement a share feature to share the posts.
