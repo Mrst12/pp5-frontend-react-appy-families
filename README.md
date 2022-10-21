@@ -8,6 +8,8 @@
 - [Development board](https://github.com/users/Mrst12/projects/7)
 - [User Story board](https://github.com/users/Mrst12/projects/8)
 
+![am i responsive](./documents/design/amiresponsive.png)
+
 # Table Of Contents
 
 1. [UX](#ux)
