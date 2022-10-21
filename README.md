@@ -98,6 +98,8 @@ Front end developers play an important role in developing an engaging user facin
 
 ![burger icon](./documents/features/burger-icon.png)
 
+- There is an underline on the link that the user is on to show where they are on the site.
+
 ### Memo page
 - The memo page is the home page it has a search function at the top, it also has infinite scroll on the posts for ease of use.
 
@@ -117,7 +119,27 @@ Front end developers play an important role in developing an engaging user facin
 
 - Clicking on a memo from the home page takes you to the single memo which shows all comments underneath, the comments have an infinite scroll function for ease of use.
 
+- Logged in users can create a new memo by clicking on the **create memo** link in the navigational bar, this will take them to the create form
+
+![create form](./documents/testing/p5-create-memo.png)
+
 ### Achievements Page
+- The achievements page can be reached via the navigational bar, this page lists all created achievements by all users.this page has an infinite scroll for ease of use.
+
+![all posts](./documents/features/achievements-all.png)
+
+- Ther is a dropdown menu which allows owner users to edit or delete their achievements, the edit button takes the user to a edit achievement form which is prefilled.
+
+![edit achievement](./documents/testing/edit-achievement1.png)
+
+- Achievements can be liked by users that dont own the achievement, all logged in users can comment on the achievements, comments can be edited and deleted by owner users.
+
+![like/comment](./documents/features/like-comment-achievement.png)
+
+- When clicking on an achievement it will display the single achievement and its related comments, comments have an infinite scroll feature for ease of use.
+
+![single achievement](./documents/features/single-achievement.png)
+
 ### Todo List
 ### Profile page
 ### About page
