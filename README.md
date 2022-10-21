@@ -89,6 +89,8 @@ Front end developers play an important role in developing an engaging user facin
 
 - The dropdown menu was not rendering on achievements page, with the help of *Ed* from tutor support, it was fixed via changing the prop name from AchievementsPage to setAchievement. The dropdown then rendered as intended.
 
+- Upon trying to deploy the frontend to Heroku, the deploy was failing due to node package not being in my package.json file, after contacting tutor support Scott helped fix the problem by addding an engine with node package number to the file, which then successfully deployed my application.
+
 ### Unfixed
 
 ## Technologies used
