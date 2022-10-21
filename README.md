@@ -125,6 +125,8 @@ Front end developers play an important role in developing an engaging user facin
     - used for selecting fonts for project.
 - Amiresponsive
     - used for testing responsiveness and providing screenshots in different sizes.
+- Favicon converter
+    - used to convert image to a favicon.
 
 ## Project Setup
 
@@ -195,5 +197,15 @@ npm start
 5. Test your deployed version matches development version.
 
 ## Credits
+- The code institute *moments* project was used as my starting point, but adapted throughout to suit my projects needs and changed moreso as my confidence grew.
+
+- image taken from google search for a family which I then turned into a favicon.
 
 ## Acknowledgements
+
+- Code institute for the learning material and support.
+- Tutor support for having my back through some tough times.
+- My mentor for helping me with project planning, support with the last few tweaks and end of project session.
+- My husband and children for their patience and unending support getting me through.
+- All of the slack community especially **Kera Cudmore**, **Veronica Lourens**, **Shellie Downie**, and **Leah Fisher** who all helped keep me going when it was tough.
+- My late father, my inspiration to show that hard work and determination pays off, I hope I have made him proud.
