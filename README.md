@@ -141,6 +141,19 @@ Front end developers play an important role in developing an engaging user facin
 ![single achievement](./documents/features/single-achievement.png)
 
 ### Todo List
+- The todo page can be reached by the **To Do List** link on the navigational bar. The page has an infinite scroll for ease of use.
+
+- Logged in users can create a task for the Todo list via the link **Create a Task** which will take them to a create form
+
+![create task](./documents/testing/create-task.png)
+
+- Tasks can be edited and deleted by owner users via the dropdown menu, which will take the user to an edit form which is prefilled.
+
+![edit form](./documents/testing/edit-task.png)
+
+- To view a single task users can click on the task and it will display only the one task.
+
+![single task](./documents/testing/single-task.png)
 ### Profile page
 ### About page
 ### Registration
