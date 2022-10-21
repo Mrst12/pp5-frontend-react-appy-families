@@ -123,6 +123,8 @@ Front end developers play an important role in developing an engaging user facin
     - used for making colour pallete
 - Google fonts
     - used for selecting fonts for project.
+- Amiresponsive
+    - used for testing responsiveness and providing screenshots in different sizes.
 
 ## Project Setup
 
