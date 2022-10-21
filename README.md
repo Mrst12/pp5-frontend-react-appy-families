@@ -155,6 +155,14 @@ Front end developers play an important role in developing an engaging user facin
 
 ![single task](./documents/testing/single-task.png)
 ### Profile page
+- The profile page can be reached via the main navigational bar, or by clicking any user avatar, the user that owns the profile can edit their name, bio and profile picture, they can also change their username and password. the profile page shows that users achievement posts.
+
+![profile page](./documents/testing/profile-page.png)
+
+![update](./documents/testing/edit-profile.png)
+
+![update profile](./documents/testing/profile-update.png)
+
 ### About page
 ### Registration
 ### Not Found page
