@@ -126,10 +126,29 @@ The same table was used for checks in deployed application all checks working.
 #### Todo page
 
 - As a user I can create an item in the todo page so that I can see what tasks need to be done
+    - A create task form is available to logged in users
+
+![create task form](./documents/testing/create-task.png)
+
 - As a user I can view the Todo details so that I know all the details for the item
+    - The single task detail is available by clicking on the task in the main To Do list page
+
+![single task](./documents/testing/single-task.png)
+
 - As a owner user I can update my todo list so that I have full functionality over the list
+    - There is a dropdown menu available to owner users which takes them to a prefilled edit form
+
+![edit form task](./documents/testing/edit-memo.png)
+
 - As a owner user I can delete a todo item so that I am in control of my lists
+    - A dropdown is available to owner users to delete their own memo
+
+![delete task](./documents/testing/delete-memo.png)
+
 - As a user I can search the todo list page by owner profile, task title, status, or due date so that I have more control over which posts I see
+    - There is a search bar at the top of the page for users to use the search functionality
+
+![search bar](./documents/testing/search-tasks.png)
 
 #### Achievements
 
