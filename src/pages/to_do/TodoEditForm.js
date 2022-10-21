@@ -67,7 +67,7 @@ function TodoEditForm() {
     return (
         <Container className={styles.Container}>
             <br />
-            <h2>Edit Memo</h2>
+            <h2>Edit Task</h2>
             <br />
             <Form onSubmit={handleSubmit}>
                 <Form.Group>
