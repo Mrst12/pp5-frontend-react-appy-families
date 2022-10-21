@@ -186,8 +186,19 @@ The same table was used for checks in deployed application all checks working.
 
 - As a user I can create my own profile so that others can see information about me
 - As a user I can update my profile so that the information about me is up to date
+    - A profile is created with a username when registering, a user can update their information via the dropdown menu to edit their profile.
+
+![profile edit form](./documents/testing/profile-update.png)
+
 - As a user I can view the profile pages of users so that I can get to know more information about them
+    - by clicking on an avatar in the family column or on a post it will take the user to the specific users profile page.
+
+![profile page](./documents/testing/profile-page.png)
+
 - As a user I can update my username and password so that I can keep my profile secure
+    - A dropdown menu is available to owner users to update their username and password
+
+![edit profile](./documents/testing/edit-profile.png)
 
 #### User experience
 
