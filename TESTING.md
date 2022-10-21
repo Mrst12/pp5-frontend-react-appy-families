@@ -153,11 +153,34 @@ The same table was used for checks in deployed application all checks working.
 #### Achievements
 
 - As a user I can create an achievement post so that everyone can share my achievements
+    - There is a create an achievement link for logged in users to share their achievements
+
+![create achievement](./documents/testing/create-achievement.png)
+
 - As a user I can view all the achievements posted so that I can see what everyone is doing in my family
+    - There is a main achievements page available for everyone to see
+
+![achievement page](./documents/testing/achievement-page.png)
+
 - As a owner user I can update my achievement post so that I can make any necessary changes after creation
+    - There is a dropdown menu available to owner users which takes them to a prefilled edit form
+
+![edit achievement](./documents/testing/edit-achievement.png)
+
 - As a owner user I can delete my achievement so that I have full control of my post
+    - There is a dropdown menu available to owner users to delete their achievement post
+
+![delete achievement](./documents/testing/delete-memo.png)
+
 - As a user I can comment on achievement posts so that I can interact with the other users
+    - A logged in user can comment on the achievements and edit or delete their own comment
+
+![comment](./documents/testing/comment-function.png)
+
 - As a user I can like a users achievement so that I can interact with other users showing I like their post
+    - There is a heart icon on each achievement logged in users that don't own the achievement can like them
+
+![like](./documents/testing/like.png)
 
 #### Profiles
 
