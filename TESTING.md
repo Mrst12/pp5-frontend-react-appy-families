@@ -39,6 +39,9 @@ back to the [README.md](README.md)
 ![CRUD testing development](./documents/testing/front-crud-test-dev.png)
 The same table was used for checks in deployed application all checks working.
 ### Validation
+
+- The pep8 site is currently unavailable, we were advised to install pycodestyle in the terminal, the terminal bar then shows any problems in the workspace, no problems were found in the files.
+
 ### Lighthouse
 
 - Lighthouse scores
