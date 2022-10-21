@@ -84,6 +84,16 @@ Front end developers play an important role in developing an engaging user facin
 
 ## Features
 ### Navigation bar
+- There is a navigational bar down the side for larger screens, with different icons depending on wether you are logged in or not 
+
+- Large screen logged out
+
+![logged out large screen](./documents/features/logged-out.png)
+
+- Large screen logged in
+
+![logged in large screen](./documents/features/logged-in-lrg.png)
+
 ### Memo page
 ### Achievements Page
 ### Todo List
