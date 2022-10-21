@@ -94,7 +94,29 @@ Front end developers play an important role in developing an engaging user facin
 
 ![logged in large screen](./documents/features/logged-in-lrg.png)
 
+- The smaller screens have a burger icon which reveals the same navigational bar as larger screens, the heading is also a link back to the home page.
+
+![burger icon](./documents/features/burger-icon.png)
+
 ### Memo page
+- The memo page is the home page it has a search function at the top, it also has infinite scroll on the posts for ease of use.
+
+![searchbar](./documents/features/search-memo's.png)
+
+- The memo home page has all the created memo's by all users, logged in users can like other user's memo's, users can comment on memo's. These show on the memo
+
+![memo post](./documents/features/memo-post.png)
+
+- comments can be edited and deleted via the dropdown menu
+
+![comment](./documents/features/comment-memo.png)
+
+- There is a dropdown menu for owner users to edit or delete the memo, the edit button takes to a form to edit the memo which is prefilled
+
+![edit memo](./documents/testing/edit-memo.png)
+
+- Clicking on a memo from the home page takes you to the single memo which shows all comments underneath, the comments have an infinite scroll function for ease of use.
+
 ### Achievements Page
 ### Todo List
 ### Profile page
