@@ -203,5 +203,15 @@ The same table was used for checks in deployed application all checks working.
 #### User experience
 
 - As a user I can view an about page so that I can see what the site is about
+    - An about page is available to a user before they log in so they can decide if they want to register for an account
+
+![about page](./documents/testing/about-page.png)
+
 - As a user I can keep scrolling through posts that are loaded automatically so that I don't have to click next page to see other posts
+    - There is an infinite scroll on all pages and on the comments section too, so a user doesnt need to click any buttons to see everything.
 - As a user I can easily use the site so that I want to keep returning
+    - The site has a simple design without content that isnt necessary to make it easier on the eye, with minimal glaring colours, the forms have validation on them so a user knows if there is something wrong. There is also an underline on the navigational menu so the user knows which page they are on.
+
+![form validation](./documents/testing/form-validation.png)
+
+![underline navbar](./documents/testing/p5-navbar.png)
