@@ -102,7 +102,7 @@ The same table was used for checks in deployed application all checks working.
 - As a memo owner I can update my memo so that I can change the message as necessary after creation
     - There is a form available to edit memo through the dropdown menu(only visible to owner), the form is prefilled with the data.
 
-![edit memo form](./documents/testing/memo-edit.png)
+![edit memo form](./documents/testing/edit-memo.png)
 
 - As a memo owner I can delete my memo so that I can control the removal of the memo from the site
     - There is a dropdown menu for owner users to delete their memo.
@@ -144,7 +144,7 @@ The same table was used for checks in deployed application all checks working.
 - As a owner user I can update my todo list so that I have full functionality over the list
     - There is a dropdown menu available to owner users which takes them to a prefilled edit form
 
-![edit form task](./documents/testing/edit-memo.png)
+![edit form task](./documents/testing/edit-task.png)
 
 - As a owner user I can delete a todo item so that I am in control of my lists
     - A dropdown is available to owner users to delete their own memo
@@ -171,7 +171,7 @@ The same table was used for checks in deployed application all checks working.
 - As a owner user I can update my achievement post so that I can make any necessary changes after creation
     - There is a dropdown menu available to owner users which takes them to a prefilled edit form
 
-![edit achievement](./documents/testing/edit-achievement.png)
+![edit achievement](./documents/testing/edit-achievement1.png)
 
 - As a owner user I can delete my achievement so that I have full control of my post
     - There is a dropdown menu available to owner users to delete their achievement post
