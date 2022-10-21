@@ -183,6 +183,9 @@ The register form once completed takes the user stright to the signin page which
 ![login](./documents/testing/p5-login.png)
 
 ### Not Found page
+- If a user comesto a page that doesnt exist it will display a page saying its not found, the navigational bar is still present to take them wherever they want to go.
+
+![not found page](./documents/features/not-found.png)
 
 
 ## Future features
