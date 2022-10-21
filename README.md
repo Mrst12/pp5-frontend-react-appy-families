@@ -77,6 +77,9 @@ Front end developers play an important role in developing an engaging user facin
 ## Features
 
 ## Future features
+- In the future I would like to implement a share feature to share the posts.
+- In the future I would like to add a tag feature so people can tag each other.
+- In the future I would like to implement chat on the site instead of just commenting.
 
 ## Testing
 - The testing for the front end part of the project can be found [here](./TESTING.md)
@@ -92,6 +95,7 @@ Front end developers play an important role in developing an engaging user facin
 - Upon trying to deploy the frontend to Heroku, the deploy was failing due to node package not being in my package.json file, after contacting tutor support Scott helped fix the problem by addding an engine with node package number to the file, which then successfully deployed my application.
 
 ### Unfixed
+- none known
 
 ## Technologies used
 ### Languages
