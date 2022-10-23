@@ -64,7 +64,7 @@
 [wireframes for project](./documents/wireframes/appy-families-wireframes.pdf)
 ### Colour Scheme
 
-- The following colour scheme was chosen at the start of the project, I tried to go for light neutral colours as I aim for both male and females to use the site. The sitw will be mainly white with the colours chosen for buttons, icons and text.
+- The following colour scheme was chosen at the start of the project, I tried to go for light neutral colours as I aim for both male and females to use the site. The site will be mainly white with the colours chosen for buttons, icons and text.
 
 ![colour scheme for site](./documents/design/p5-colours.png)
 
@@ -124,7 +124,7 @@ Front end developers play an important role in developing an engaging user facin
 ![create form](./documents/testing/p5-create-memo.png)
 
 ### Achievements Page
-- The achievements page can be reached via the navigational bar, this page lists all created achievements by all users.this page has an infinite scroll for ease of use.
+- The achievements page can be reached via the navigational bar, this page lists all created achievements by all users. This page has an infinite scroll for ease of use.
 
 ![all posts](./documents/features/achievements-all.png)
 
@@ -189,6 +189,7 @@ The register form once completed takes the user straight to the signin page whic
 
 
 ## Future features
+- In the future I would like to implement a modal for the delete function, so a box pops up and asks a user if they are sure they want to delete something.
 - In the future I would like to implement a share feature to share the posts.
 - In the future I would like to add a tag feature so people can tag each other.
 - In the future I would like to implement chat on the site instead of just commenting.
